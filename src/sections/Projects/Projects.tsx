@@ -1,12 +1,89 @@
-import React, { useRef, useEffect } from "react";
-import { projects } from "@/data/projects";
+import React, { useRef, useEffect, useState } from "react";
+import { projects, type ProjectScreenshot } from "@/data/projects";
 import { gsap } from "@/animations/gsapInit";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Smartphone,
+  Gamepad2,
+  Maximize2,
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 export const Projects: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const [activeModalProject, setActiveModalProject] = useState<{
+    title: string;
+    screenshots: ProjectScreenshot[];
+    index: number;
+    isLandscape: boolean;
+  } | null>(null);
+
+  const openModal = (
+    title: string,
+    screenshots: ProjectScreenshot[],
+    index: number,
+    isLandscape = false
+  ) => {
+    setActiveModalProject({ title, screenshots, index, isLandscape });
+  };
+
+  const closeModal = () => {
+    setActiveModalProject(null);
+  };
+
+  const nextModalScreenshot = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (activeModalProject) {
+      setActiveModalProject((prev) =>
+        prev
+          ? { ...prev, index: (prev.index + 1) % prev.screenshots.length }
+          : null
+      );
+    }
+  };
+
+  const prevModalScreenshot = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (activeModalProject) {
+      setActiveModalProject((prev) =>
+        prev
+          ? {
+              ...prev,
+              index:
+                (prev.index - 1 + prev.screenshots.length) %
+                prev.screenshots.length,
+            }
+          : null
+      );
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!activeModalProject) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "ArrowRight") nextModalScreenshot();
+      if (e.key === "ArrowLeft") prevModalScreenshot();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeModalProject]);
+
+  useEffect(() => {
+    if (activeModalProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeModalProject]);
 
   useEffect(() => {
     if (prefersReducedMotion || !sectionRef.current) return;
@@ -129,24 +206,75 @@ export const Projects: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Blueprint HUD Frame */}
-            <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs">
-              <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
-                <span>FIG. 01 // SYSTEM ARCHITECTURE</span>
-                <span className="text-[#005A36] dark:text-[#00A865]">STATUS: OK</span>
+            {/* Right Multi-Device HUD Frame with All 4 Screenshots */}
+            <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs transition-colors">
+              <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
+                <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
+                  <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
+                  <span>FIG. 01 // FLUTTER MULTILINGUAL CLIENT (4 SCREENS)</span>
+                </span>
+                <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
+                  <span>CLICK TO INSPECT</span>
+                  <ArrowUpRight size={11} />
+                </span>
               </div>
 
-              {/* Blueprint Graphic */}
-              <div className="relative aspect-[16/10] overflow-hidden flex items-center justify-center p-3">
-                <img
-                  src={p1.image}
-                  alt={p1.title}
-                  className="w-full h-full object-cover rounded-xs"
-                />
+              {/* 4 Phone Mockups Showcase */}
+              <div className="p-3 sm:p-4 bg-[#FAF9F6] dark:bg-[#0E120E]">
+                <div className="flex sm:grid sm:grid-cols-4 gap-2 sm:gap-2.5 overflow-x-auto pb-2 sm:pb-0 snap-x snap-mandatory no-scrollbar">
+                  {p1.screenshots?.map((ss, idx) => (
+                    <div
+                      key={ss.id}
+                      onClick={() => openModal(p1.title, p1.screenshots!, idx, false)}
+                      className="group/phone relative flex-1 shrink-0 w-[125px] sm:w-auto snap-center cursor-pointer transition-all duration-300 hover:-translate-y-1.5 select-none"
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Inspect ${ss.label} screenshot`}
+                    >
+                      {/* Phone Bezel */}
+                      <div className="relative rounded-[16px] border-[2px] border-[#1C201C] dark:border-[#2E372E] bg-[#111411] p-1 shadow-md transition-all duration-300 group-hover/phone:border-[#005A36] dark:group-hover/phone:border-[#00A865] group-hover/phone:shadow-[0_6px_20px_rgba(0,90,54,0.22)] dark:group-hover/phone:shadow-[0_6px_20px_rgba(0,168,101,0.25)]">
+                        {/* Speaker Notch */}
+                        <div className="w-5 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
+
+                        {/* Screen Image Container */}
+                        <div className="relative aspect-[9/20] overflow-hidden rounded-[11px] bg-[#E9E4D9]/40 dark:bg-[#1A201A]">
+                          <img
+                            src={ss.image}
+                            alt={`${p1.title} - ${ss.label}`}
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/phone:scale-105"
+                          />
+
+                          {/* Hover Overlay Hint */}
+                          <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                            <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                              <Maximize2 size={12} />
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Home Indicator */}
+                        <div className="w-8 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
+                      </div>
+
+                      {/* Screen Caption */}
+                      <div className="mt-2 text-center">
+                        <div className="font-mono text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold">
+                          {ss.tag.split("//")[0].trim()}
+                        </div>
+                        <div className="font-sans text-[10px] text-[#111111] dark:text-[#F5F3EE] truncate font-medium">
+                          {ss.label}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612] text-center">
-                AUDIO PIPELINE: READY // BHASHINI TTS/STT ENGINE
+              {/* Bottom Technical Status Bar */}
+              <div className="px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612] flex items-center justify-between">
+                <span>AUDIO PIPELINE: READY // BHASHINI MULTILINGUAL</span>
+                <span className="text-[#005A36] dark:text-[#00A865] font-semibold">4 / 4 VIEWS</span>
               </div>
             </div>
           </div>
@@ -290,7 +418,7 @@ export const Projects: React.FC = () => {
             </div>
           </article>
 
-          {/* Project 04: Kings & Pigs */}
+          {/* Project 04: Kings & Pigs with Dual-Scene Display */}
           <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
@@ -313,13 +441,54 @@ export const Projects: React.FC = () => {
                 {p4.description}
               </p>
 
-              {/* Graphic container */}
-              <div className="my-5 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2 overflow-hidden aspect-[16/9]">
-                <img
-                  src={p4.image}
-                  alt={p4.title}
-                  className="w-full h-full object-cover"
-                />
+              {/* Dual-Scene Graphic Container with Both Levels */}
+              <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
+                    <Gamepad2 size={12} className="text-[#005A36] dark:text-[#00A865]" />
+                    <span>2D GAME ENGINE // 2 LEVEL SCENES</span>
+                  </span>
+                  <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
+                    <span>INSPECT SCENE</span>
+                    <ArrowUpRight size={10} />
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                  {p4.screenshots?.map((ss, idx) => (
+                    <div
+                      key={ss.id}
+                      onClick={() => openModal(p4.title, p4.screenshots!, idx, true)}
+                      className="group/scene relative rounded-lg border-2 border-[#1C201C] dark:border-[#2E372E] bg-[#111411] overflow-hidden cursor-pointer transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:shadow-[0_6px_20px_rgba(0,90,54,0.22)] dark:hover:shadow-[0_6px_20px_rgba(0,168,101,0.25)] hover:-translate-y-0.5"
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Inspect ${ss.label} scene`}
+                    >
+                      {/* Mini Title Header */}
+                      <div className="flex items-center justify-between px-2.5 py-1 bg-[#171B17] border-b border-[#2A332A] font-mono text-[9px] select-none">
+                        <span className="text-[#00A865] font-semibold">{ss.tag.split("//")[0].trim()}</span>
+                        <span className="text-[#F5F3EE] truncate ml-1 text-[10px] font-sans">{ss.label}</span>
+                      </div>
+
+                      {/* Scene Image */}
+                      <div className="relative aspect-[16/9] overflow-hidden bg-[#241E2F]">
+                        <img
+                          src={ss.image}
+                          alt={`${p4.title} - ${ss.label}`}
+                          loading="lazy"
+                          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover/scene:scale-105"
+                        />
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/scene:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                          <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                            <Maximize2 size={13} />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Tech Tags */}
@@ -350,6 +519,101 @@ export const Projects: React.FC = () => {
           </article>
         </div>
       </div>
+
+      {/* Fullscreen Screenshot Lightbox Modal */}
+      {activeModalProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#000000]/80 backdrop-blur-md transition-all duration-300"
+          onClick={closeModal}
+        >
+          <div
+            className={`relative w-full max-h-[94vh] flex flex-col items-center bg-[#FFFFFF] dark:bg-[#0E120E] border border-[#D8D5CE] dark:border-[#272B26] p-4 sm:p-6 shadow-2xl rounded-2xl ${
+              activeModalProject.isLandscape ? "max-w-4xl" : "max-w-lg"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-xs">
+              <div className="flex items-center gap-2">
+                <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
+                  {activeModalProject.screenshots[activeModalProject.index].tag}
+                </span>
+                <span className="text-[#111111] dark:text-[#F5F3EE] font-sans font-medium">
+                  {activeModalProject.screenshots[activeModalProject.index].label}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={closeModal}
+                className="p-1.5 rounded-full hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/15 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors cursor-pointer"
+                aria-label="Close image modal"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Modal Image with Navigation Arrows */}
+            <div className="relative w-full flex items-center justify-center my-auto py-2">
+              <button
+                type="button"
+                onClick={prevModalScreenshot}
+                className="absolute left-1 sm:left-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                aria-label="Previous screenshot"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <div
+                className={`overflow-hidden rounded-[16px] border-[3px] border-[#1C201C] dark:border-[#2E372E] shadow-2xl bg-black ${
+                  activeModalProject.isLandscape
+                    ? "max-h-[72vh] aspect-[16/9] sm:aspect-[21/10] w-full"
+                    : "max-h-[66vh] aspect-[9/20]"
+                }`}
+              >
+                <img
+                  src={activeModalProject.screenshots[activeModalProject.index].image}
+                  alt={activeModalProject.screenshots[activeModalProject.index].label}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={nextModalScreenshot}
+                className="absolute right-1 sm:right-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                aria-label="Next screenshot"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+
+            {/* Bottom Screen Switcher Dots / Pills */}
+            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
+              <span>VIEW {activeModalProject.index + 1} OF {activeModalProject.screenshots.length}</span>
+              <div className="flex items-center gap-1.5">
+                {activeModalProject.screenshots.map((s, sIdx) => (
+                  <button
+                    key={s.id}
+                    onClick={() =>
+                      setActiveModalProject((prev) =>
+                        prev ? { ...prev, index: sIdx } : null
+                      )
+                    }
+                    className={`h-2 rounded-full transition-all cursor-pointer ${
+                      sIdx === activeModalProject.index
+                        ? "w-6 bg-[#005A36] dark:bg-[#00A865]"
+                        : "w-2 bg-[#D8D5CE] dark:bg-[#272B26] hover:bg-[#005A36]/50"
+                    }`}
+                    aria-label={`Jump to view ${sIdx + 1}`}
+                  />
+                ))}
+              </div>
+              <span className="hidden sm:inline">ARROWS OR ESC</span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
+
