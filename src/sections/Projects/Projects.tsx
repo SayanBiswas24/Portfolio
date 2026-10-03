@@ -374,13 +374,67 @@ export const Projects: React.FC = () => {
                 {p3.description}
               </p>
 
-              {/* Graphic container */}
-              <div className="my-5 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2 overflow-hidden aspect-[16/9]">
-                <img
-                  src={p3.image}
-                  alt={p3.title}
-                  className="w-full h-full object-cover"
-                />
+              {/* Multi-Screen Mobile Showcase */}
+              <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+                  <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
+                    <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
+                    <span>CIVIC CLIENT // 4 MOBILE VIEWS</span>
+                  </span>
+                  <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
+                    <span>CLICK TO INSPECT</span>
+                    <ArrowUpRight size={10} />
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  {p3.screenshots?.map((ss, idx) => (
+                    <div
+                      key={ss.id}
+                      onClick={() => openModal(p3.title, p3.screenshots!, idx, false)}
+                      className="group/phone relative flex flex-col cursor-pointer transition-all duration-300 hover:-translate-y-1 select-none"
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Inspect ${ss.label} screenshot`}
+                    >
+                      {/* Phone Bezel */}
+                      <div className="relative rounded-[14px] border-[2px] border-[#1C201C] dark:border-[#2E372E] bg-[#111411] p-1 shadow-sm transition-all duration-300 group-hover/phone:border-[#005A36] dark:group-hover/phone:border-[#00A865] group-hover/phone:shadow-[0_4px_16px_rgba(0,90,54,0.2)] dark:group-hover/phone:shadow-[0_4px_16px_rgba(0,168,101,0.22)]">
+                        {/* Speaker Notch */}
+                        <div className="w-4 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
+
+                        {/* Screen Image Container */}
+                        <div className="relative aspect-[9/20] overflow-hidden rounded-[9px] bg-[#E9E4D9]/40 dark:bg-[#1A201A]">
+                          <img
+                            src={ss.image}
+                            alt={`${p3.title} - ${ss.label}`}
+                            loading="lazy"
+                            className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/phone:scale-105"
+                          />
+
+                          {/* Hover Overlay Hint */}
+                          <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
+                            <span className="p-1 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                              <Maximize2 size={11} />
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Home Indicator */}
+                        <div className="w-6 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
+                      </div>
+
+                      {/* Screen Caption */}
+                      <div className="mt-1.5 text-center">
+                        <div className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold truncate">
+                          {ss.tag.split("//")[0].trim()}
+                        </div>
+                        <div className="font-sans text-[9px] sm:text-[10px] text-[#111111] dark:text-[#F5F3EE] truncate font-medium">
+                          {ss.label}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Tech Tags */}

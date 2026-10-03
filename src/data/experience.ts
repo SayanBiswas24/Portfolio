@@ -19,34 +19,30 @@ export interface EducationItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    id: "exp-1",
-    year: "2026",
-    role: "Full-Stack & Mobile Developer (Placeholder)",
-    organization: "Company / Organization Name",
+    id: "digital-guru",
+    year: "2024",
+    role: "Flutter Developer Intern",
+    organization: "Digital Guru",
     description:
-      "Engineered responsive applications, integrated backend microservices, and collaborated on architecture design and delivery pipelines.",
-    technologies: ["Flutter", "TypeScript", "Node.js"],
-    isPlaceholder: true,
-  },
-  {
-    id: "exp-2",
-    year: "2025",
-    role: "Software Engineering Intern (Placeholder)",
-    organization: "Company / Organization Name",
-    description:
-      "Contributed to frontend feature development, REST API integrations, and unit test automation across client-facing products.",
-    technologies: ["React", "Express", "MongoDB"],
-    isPlaceholder: true,
+      "Engineered an AI call assistant and built an adaptive micro-learning platform that delivers structured daily topics to users dynamically tailored to their selected course length and study pace.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "AI Assistant",
+      "Micro-Learning Engine",
+      "REST APIs",
+      "State Management",
+    ],
   },
 ];
 
 export const education: EducationItem[] = [
   {
-    id: "edu-1",
-    degree: "Degree / Program Name (Placeholder)",
-    institution: "Institution / University Name",
-    period: "Expected Graduation: 2026",
-    detail: "Focused on Computer Science, Software Engineering & Systems Architecture.",
-    isPlaceholder: true,
+    id: "bit-sindri",
+    degree: "Information Technology",
+    institution: "BIT Sindri",
+    period: "3rd Year Undergraduate",
+    detail:
+      "Pursuing Bachelor of Technology (B.Tech) in Information Technology at BIT Sindri (3rd year undergraduate). Focused on software engineering, distributed systems, mobile architectures, and algorithm design.",
   },
 ];

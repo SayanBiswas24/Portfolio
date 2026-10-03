@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { number: "01", label: "ABOUT", href: "#about" },
   { number: "02", label: "SKILLS", href: "#skills" },
   { number: "03", label: "WORK", href: "#work" },
-  { number: "04", label: "EXPERIENCE", href: "#experience" },
+  { number: "04", label: "ACADEMICS & EXP", href: "#experience" },
   { number: "05", label: "CREDENTIALS", href: "#credentials" },
   { number: "06", label: "CONTACT", href: "#contact" },
 ];
