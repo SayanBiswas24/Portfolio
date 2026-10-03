@@ -49,7 +49,7 @@ export function App() {
           {/* 04 // Timeline & Background */}
           <Experience />
 
-          {/* 05 // Credentials */}
+          {/* 05 // Achievements */}
           <Credentials />
 
           {/* 06 // Contact */}

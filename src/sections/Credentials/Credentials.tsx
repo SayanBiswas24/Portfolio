@@ -50,17 +50,17 @@ export const Credentials: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      id="credentials"
+      id="achievements"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
       <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
           <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
-            <span>05 // CREDENTIALS & RECOGNITION</span>
+            <span>05 // ACHIEVEMENTS</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE]">
-            Certificates & Recognition
+            Achievements & Recognition
           </h2>
         </div>
       </div>
