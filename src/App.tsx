@@ -16,7 +16,7 @@ export function App() {
       <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#090B09]">
         {/* Subtle architectural vertical grid columns matching reference screenshot */}
         <div
-          className="fixed inset-0 max-w-7xl mx-auto px-6 md:px-12 pointer-events-none z-0 grid grid-cols-4 md:grid-cols-6 border-x border-[#D8D5CE]/30 dark:border-[#212621]/40"
+          className="fixed inset-0 max-w-[1520px] mx-auto px-3 sm:px-6 pointer-events-none z-0 grid grid-cols-4 md:grid-cols-6 border-x border-[#D8D5CE]/30 dark:border-[#212621]/40"
           aria-hidden="true"
         >
           <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />

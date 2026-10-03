@@ -68,7 +68,7 @@ export const Navigation: React.FC = () => {
           : "bg-transparent py-5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand / Name */}
         <a
           href="#hero"

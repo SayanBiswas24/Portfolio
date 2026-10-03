@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 pb-10 px-6 md:px-12 max-w-7xl mx-auto w-full"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 pb-10 px-4 sm:px-6 max-w-[1520px] mx-auto w-full"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-8">
         {/* Left Column: Typography */}

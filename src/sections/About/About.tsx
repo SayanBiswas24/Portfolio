@@ -51,7 +51,7 @@ export const About: React.FC = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
+      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
       {/* Top Header Bar */}
       <div className="about-header-item flex items-center justify-between pb-6 mb-12 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-xs uppercase tracking-wider">

@@ -7,8 +7,8 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="w-full border-t border-[#D8D5CE] dark:border-[#212621] py-8 px-6 md:px-12 bg-[#FFFFFF] dark:bg-[#0E120E] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+    <footer className="w-full border-t border-[#D8D5CE] dark:border-[#212621] py-8 px-4 sm:px-6 bg-[#FFFFFF] dark:bg-[#0E120E] transition-colors duration-300">
+      <div className="max-w-[1520px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
         {/* Left */}
         <div>
           TOTAL VISITS // 2026 EDITION
