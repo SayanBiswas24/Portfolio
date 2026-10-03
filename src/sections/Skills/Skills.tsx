@@ -97,7 +97,6 @@ export const Skills: React.FC = () => {
       id="skills"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Top Header */}
       <div className="skills-header-block mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
@@ -108,12 +107,8 @@ export const Skills: React.FC = () => {
             Tools I Work With
           </h2>
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
-          MODULAR STACK SELECTED FOR TYPE-SAFETY, RESILIENCE & TECHNICAL PERFORMANCE
-        </p>
       </div>
 
-      {/* 6 Column Cards Grid */}
       <div className="tools-columns-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         {toolCategories.map((group) => (
           <div
@@ -121,7 +116,6 @@ export const Skills: React.FC = () => {
             className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
           >
             <div>
-              {/* Card Header */}
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 mb-5">
                 <span className="font-mono text-xs text-[#005A36] dark:text-[#00A865] uppercase tracking-widest font-semibold">
                   {group.number} // {group.category}
@@ -129,7 +123,6 @@ export const Skills: React.FC = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#212621] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors" />
               </div>
 
-              {/* Items List */}
               <ul className="space-y-2.5">
                 {group.items.map((item) => (
                   <li
@@ -143,11 +136,6 @@ export const Skills: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Bottom Descriptor */}
-            <div className="mt-8 pt-3 border-t border-[#D8D5CE]/40 dark:border-[#212621]/60 font-mono text-[9px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
-              {group.footer}
             </div>
           </div>
         ))}

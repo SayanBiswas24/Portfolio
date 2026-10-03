@@ -47,7 +47,7 @@ export const Contact: React.FC = () => {
         <div className="lg:col-span-7">
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
-            <span>06 // DISPATCH // INQUIRY</span>
+            <span>06 // CONTACT</span>
           </div>
 
           <h2 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.08] mb-6">
@@ -58,10 +58,9 @@ export const Contact: React.FC = () => {
           </h2>
 
           <p className="font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mb-10">
-            Have a project, opportunity, collaboration idea, or just want to talk about technology? Reach out directly via dispatch or electronic mail.
+            Have a project, opportunity, collaboration idea, or just want to talk about technology? Reach out directly via email or social links.
           </p>
 
-          {/* CTA Pill Buttons matching screenshot */}
           <div className="flex flex-wrap items-center gap-3.5">
             <Button
               variant="primary"
@@ -97,23 +96,18 @@ export const Contact: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: Direct Dispatch Desk Card */}
         <div className="lg:col-span-5">
           <div className="border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 shadow-xs transition-all duration-300 hover:border-[#005A36]/60 dark:hover:border-[#00A865]/60 hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]">
             <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-xs uppercase tracking-wider font-semibold">
               <span className="text-[#111111] dark:text-[#F5F3EE]">
-                DIRECT DISPATCH DESK
-              </span>
-              <span className="text-[#005A36] dark:text-[#00A865]">
-                STATUS: OPEN
+                CONTACT DETAILS
               </span>
             </div>
 
             <div className="mt-6 space-y-6">
-              {/* Channel 1 */}
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mb-1">
-                  ELECTRONIC MAIL
+                  EMAIL
                 </div>
                 <a
                   href={emailHref}
@@ -123,10 +117,9 @@ export const Contact: React.FC = () => {
                 </a>
               </div>
 
-              {/* Channel 2 */}
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mb-1">
-                  SOURCE REPOSITORY
+                  GITHUB
                 </div>
                 <a
                   href={personalInfo.github}
@@ -138,10 +131,9 @@ export const Contact: React.FC = () => {
                 </a>
               </div>
 
-              {/* Channel 3 */}
               <div>
                 <div className="font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mb-1">
-                  PROFESSIONAL NETWORK
+                  LINKEDIN
                 </div>
                 <a
                   href={personalInfo.linkedin}
@@ -152,13 +144,6 @@ export const Contact: React.FC = () => {
                   {personalInfo.linkedin.replace(/^https?:\/\//, "")}
                 </a>
               </div>
-            </div>
-
-            <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
-              <span>RESPONSE TIME</span>
-              <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
-                &lt; 24 HOURS
-              </span>
             </div>
           </div>
         </div>

@@ -98,11 +98,10 @@ export const Hero: React.FC = () => {
           <div className="hero-meta inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mb-5">
             <span className="w-1.5 h-1.5 bg-[#005A36] dark:bg-[#00A865] rounded-xs" />
             <span className="font-semibold">
-              01. INTRO // PERSONAL PORTFOLIO // 2026 EDITION
+              PERSONAL PORTFOLIO
             </span>
           </div>
 
-          {/* Heading with editorial serif and italic middle line */}
           <h1
             ref={headingRef}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.08] mb-6"
@@ -118,12 +117,10 @@ export const Hero: React.FC = () => {
             </span>
           </h1>
 
-          {/* Refined Description */}
           <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mb-9">
             Flutter and Full-Stack developer focused on building durable, scalable systems, intuitive digital products, and decentralized architectures. Bringing analytical rigor and craftsmanship to every product build.
           </p>
 
-          {/* Buttons: Pill styling matching screenshot */}
           <div className="hero-cta flex flex-wrap items-center gap-3.5">
             <Button
               variant="primary"
@@ -159,39 +156,26 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column: 3D CAD/HUD Frame */}
         <div
           ref={visualRef}
           className="lg:col-span-5 relative w-full border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#0E120E] shadow-xs flex flex-col justify-between overflow-hidden"
         >
-          {/* Top HUD Bar */}
           <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
             <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
-              SYS_GRAPH // VIEW_01
-            </span>
-            <span className="text-[#005A36] dark:text-[#00A865]">
-              LATENCY: 12ms // STATUS: OK
+              INTERACTIVE SYSTEM GRAPH
             </span>
           </div>
 
-          {/* Central 3D Canvas Container */}
           <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[400px]">
             <HeroNetwork mouse={mouse} />
-          </div>
-
-          {/* Bottom HUD Bar */}
-          <div className="flex items-center justify-between px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
-            <span>NODES: 09 / ACTIVE: 09</span>
-            <span className="text-[#005A36] dark:text-[#00A865]">INTERACTIVE // 3D</span>
           </div>
         </div>
       </div>
 
-      {/* Hero Bottom Ticker Bar */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
         <div className="text-left">
-          COORDINATES: 22°34' N 88°21' E
+          AVAILABLE FOR NEW ROLES
         </div>
         <div className="text-center">
           <button
@@ -203,7 +187,7 @@ export const Hero: React.FC = () => {
           </button>
         </div>
         <div className="text-right text-[#005A36] dark:text-[#00A865] font-medium">
-          STATUS: OPEN FOR NEW WORK
+          INDIA
         </div>
       </div>
     </section>

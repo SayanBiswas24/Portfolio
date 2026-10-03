@@ -52,7 +52,6 @@ export const Credentials: React.FC = () => {
       id="credentials"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Header */}
       <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
@@ -63,9 +62,6 @@ export const Credentials: React.FC = () => {
             Certificates & Recognition
           </h2>
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
-          OFFICIAL AND INDUSTRY-VERIFIED CREDENTIAL ARCHIVE
-        </p>
       </div>
 
       {/* Grid of 3 Cards */}

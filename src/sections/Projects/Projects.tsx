@@ -135,7 +135,6 @@ export const Projects: React.FC = () => {
       id="work"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Header */}
       <div className="projects-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
@@ -146,9 +145,6 @@ export const Projects: React.FC = () => {
             Things I've Built
           </h2>
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
-          04 PROJECTS ARCHIVED // FLUTTER, WEB & SYSTEMS
-        </p>
       </div>
 
       <div className="projects-list-container space-y-12">
@@ -160,9 +156,6 @@ export const Projects: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 01</span>
-                  <span className="text-[#5F5F5A] dark:text-[#9E9E98]">
-                    FEATURED SYSTEM // 2026
-                  </span>
                 </div>
 
                 <div className="mt-5 mb-3">
@@ -178,7 +171,6 @@ export const Projects: React.FC = () => {
                   {p1.description}
                 </p>
 
-                {/* Tech Pills */}
                 <div className="flex flex-wrap gap-2 mt-6">
                   {p1.technologies.map((t) => (
                     <span
@@ -190,24 +182,13 @@ export const Projects: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Technical Status */}
-              <div className="mt-8 pt-5 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
-                <span className="text-[#005A36] dark:text-[#00A865] font-semibold tracking-wider uppercase">
-                  STATUS: VERIFIED ARCHIVE
-                </span>
-                <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[11px]">
-                  DEPLOYMENT // PRODUCTION
-                </span>
-              </div>
             </div>
 
-            {/* Right Multi-Device HUD Frame with All 4 Screenshots */}
             <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs transition-colors">
               <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
                 <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                   <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
-                  <span>FIG. 01 // FLUTTER MULTILINGUAL CLIENT (4 SCREENS)</span>
+                  <span>FLUTTER MULTILINGUAL CLIENT</span>
                 </span>
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
                   <span>CLICK TO INSPECT</span>
@@ -266,27 +247,17 @@ export const Projects: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Bottom Technical Status Bar */}
-              <div className="px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612] flex items-center justify-between">
-                <span>AUDIO PIPELINE: READY // BHASHINI MULTILINGUAL</span>
-                <span className="text-[#005A36] dark:text-[#00A865] font-semibold">4 / 4 VIEWS</span>
-              </div>
             </div>
           </div>
         </article>
 
-        {/* ===================== PROJECT 02: AI PHONE ASSISTANT (REVERSED) ===================== */}
         <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Blueprint HUD Frame */}
             <div className="lg:col-span-6 lg:order-1 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs">
               <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
-                <span>FIG. 02 // AUDIO INTEGRATION</span>
-                <span className="text-[#005A36] dark:text-[#00A865]">VOICE SYNTHESIS</span>
+                <span>VOICE & CALL INTELLIGENCE</span>
               </div>
 
-              {/* Sound Waveform Visual Graphic */}
               <div className="relative aspect-[16/10] overflow-hidden flex items-center justify-center p-3">
                 <img
                   src={p2.image}
@@ -294,20 +265,12 @@ export const Projects: React.FC = () => {
                   className="w-full h-full object-cover rounded-xs"
                 />
               </div>
-
-              <div className="px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612] text-center">
-                SPEECH-TO-TEXT // LLM INTENT PARSER // CALL ROUTER
-              </div>
             </div>
 
-            {/* Right Content */}
             <div className="lg:col-span-6 lg:order-2 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 02</span>
-                  <span className="text-[#5F5F5A] dark:text-[#9E9E98]">
-                    VOICE & AUTOMATION
-                  </span>
                 </div>
 
                 <div className="mt-5 mb-3">
@@ -323,7 +286,6 @@ export const Projects: React.FC = () => {
                   {p2.description}
                 </p>
 
-                {/* Tech Pills */}
                 <div className="flex flex-wrap gap-2 mt-6">
                   {p2.technologies.map((t) => (
                     <span
@@ -334,16 +296,6 @@ export const Projects: React.FC = () => {
                     </span>
                   ))}
                 </div>
-              </div>
-
-              {/* Technical Status */}
-              <div className="mt-8 pt-5 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
-                <span className="text-[#005A36] dark:text-[#00A865] font-semibold tracking-wider uppercase">
-                  STATUS: PRODUCTION
-                </span>
-                <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[11px]">
-                  PIPELINE // REALTIME SPEECH
-                </span>
               </div>
             </div>
           </div>
@@ -356,9 +308,6 @@ export const Projects: React.FC = () => {
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 03</span>
-                <span className="text-[#5F5F5A] dark:text-[#9E9E98]">
-                  CIVIC DISRUPTION
-                </span>
               </div>
 
               <div className="mt-4 mb-2">
@@ -374,12 +323,11 @@ export const Projects: React.FC = () => {
                 {p3.description}
               </p>
 
-              {/* Multi-Screen Mobile Showcase */}
               <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
                 <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
-                    <span>CIVIC CLIENT // 4 MOBILE VIEWS</span>
+                    <span>CIVIC CLIENT</span>
                   </span>
                   <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
                     <span>CLICK TO INSPECT</span>
@@ -397,12 +345,9 @@ export const Projects: React.FC = () => {
                       tabIndex={0}
                       aria-label={`Inspect ${ss.label} screenshot`}
                     >
-                      {/* Phone Bezel */}
                       <div className="relative rounded-[14px] border-[2px] border-[#1C201C] dark:border-[#2E372E] bg-[#111411] p-1 shadow-sm transition-all duration-300 group-hover/phone:border-[#005A36] dark:group-hover/phone:border-[#00A865] group-hover/phone:shadow-[0_4px_16px_rgba(0,90,54,0.2)] dark:group-hover/phone:shadow-[0_4px_16px_rgba(0,168,101,0.22)]">
-                        {/* Speaker Notch */}
                         <div className="w-4 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
 
-                        {/* Screen Image Container */}
                         <div className="relative aspect-[9/20] overflow-hidden rounded-[9px] bg-[#E9E4D9]/40 dark:bg-[#1A201A]">
                           <img
                             src={ss.image}
@@ -411,7 +356,6 @@ export const Projects: React.FC = () => {
                             className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/phone:scale-105"
                           />
 
-                          {/* Hover Overlay Hint */}
                           <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                             <span className="p-1 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                               <Maximize2 size={11} />
@@ -419,11 +363,9 @@ export const Projects: React.FC = () => {
                           </div>
                         </div>
 
-                        {/* Bottom Home Indicator */}
                         <div className="w-6 h-0.5 bg-[#2C332C] dark:bg-[#445244] rounded-full mx-auto my-0.5" />
                       </div>
 
-                      {/* Screen Caption */}
                       <div className="mt-1.5 text-center">
                         <div className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold truncate">
                           {ss.tag.split("//")[0].trim()}
@@ -437,7 +379,6 @@ export const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tech Tags */}
               <div className="flex flex-wrap gap-1.5 mt-4">
                 {p3.technologies.map((t) => (
                   <span
@@ -449,25 +390,12 @@ export const Projects: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            <div className="mt-6 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
-              <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[10px]">
-                RELEASE // 2026
-              </span>
-              <span className="text-[#005A36] dark:text-[#00A865] font-semibold text-[10px] uppercase tracking-wider">
-                STATUS: CIVIC PILOT
-              </span>
-            </div>
           </article>
 
-          {/* Project 04: Kings & Pigs with Dual-Scene Display */}
           <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 04</span>
-                <span className="text-[#5F5F5A] dark:text-[#9E9E98]">
-                  INTERACTIVE ENGINE
-                </span>
               </div>
 
               <div className="mt-4 mb-2">
@@ -483,12 +411,11 @@ export const Projects: React.FC = () => {
                 {p4.description}
               </p>
 
-              {/* Dual-Scene Graphic Container with Both Levels */}
               <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
                 <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Gamepad2 size={12} className="text-[#005A36] dark:text-[#00A865]" />
-                    <span>2D GAME ENGINE // 2 LEVEL SCENES</span>
+                    <span>2D GAME ENGINE</span>
                   </span>
                   <span className="text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1">
                     <span>INSPECT SCENE</span>
@@ -506,13 +433,11 @@ export const Projects: React.FC = () => {
                       tabIndex={0}
                       aria-label={`Inspect ${ss.label} scene`}
                     >
-                      {/* Mini Title Header */}
                       <div className="flex items-center justify-between px-2.5 py-1 bg-[#171B17] border-b border-[#2A332A] font-mono text-[9px] select-none">
                         <span className="text-[#00A865] font-semibold">{ss.tag.split("//")[0].trim()}</span>
                         <span className="text-[#F5F3EE] truncate ml-1 text-[10px] font-sans">{ss.label}</span>
                       </div>
 
-                      {/* Scene Image */}
                       <div className="relative aspect-[16/9] overflow-hidden bg-[#241E2F]">
                         <img
                           src={ss.image}
@@ -521,7 +446,6 @@ export const Projects: React.FC = () => {
                           className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover/scene:scale-105"
                         />
 
-                        {/* Hover Overlay */}
                         <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/scene:opacity-100 transition-opacity duration-200 flex items-center justify-center">
                           <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                             <Maximize2 size={13} />
@@ -533,7 +457,6 @@ export const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tech Tags */}
               <div className="flex flex-wrap gap-1.5 mt-4">
                 {p4.technologies.map((t) => (
                   <span
@@ -544,15 +467,6 @@ export const Projects: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
-              <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[10px]">
-                FRAMEWORK // FLUTTER GAME ENGINE
-              </span>
-              <span className="text-[#005A36] dark:text-[#00A865] font-semibold text-[10px] uppercase tracking-wider">
-                STATUS: OPEN ARCHIVE
-              </span>
             </div>
           </article>
         </div>

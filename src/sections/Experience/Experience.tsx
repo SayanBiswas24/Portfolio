@@ -53,7 +53,6 @@ export const Experience: React.FC = () => {
       id="experience"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Header */}
       <div className="experience-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
           <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
@@ -64,13 +63,9 @@ export const Experience: React.FC = () => {
             Academics & Experience
           </h2>
         </div>
-        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
-          CHRONOLOGICAL RECORD OF ACADEMIC BACKGROUND & PROFESSIONAL PRACTICE
-        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
-        {/* Left 7 Columns: Professional Experience */}
         <div className="lg:col-span-7 space-y-6">
           <div className="flex items-center gap-2 pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-xs text-[#111111] dark:text-[#F5F3EE] uppercase tracking-widest font-semibold">
             <Briefcase size={14} className="text-[#005A36] dark:text-[#00A865]" />

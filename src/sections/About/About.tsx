@@ -53,14 +53,10 @@ export const About: React.FC = () => {
       id="about"
       className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Top Header Bar */}
       <div className="about-header-item flex items-center justify-between pb-6 mb-12 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-xs uppercase tracking-wider">
         <div className="flex items-center gap-2 text-[#005A36] dark:text-[#00A865] font-semibold">
           <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
           <span>01 // ABOUT</span>
-        </div>
-        <div className="text-[#5F5F5A] dark:text-[#9E9E98]">
-          BACKGROUND & PHILOSOPHY
         </div>
       </div>
 
