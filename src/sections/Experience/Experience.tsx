@@ -76,7 +76,7 @@ export const Experience: React.FC = () => {
             {experiences.map((item, idx) => (
               <div
                 key={item.id}
-                className="trajectory-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
+                className="trajectory-card rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
               >
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50">
                   <span className="font-serif text-xl sm:text-2xl text-[#111111] dark:text-[#F5F3EE] font-normal">
@@ -100,7 +100,7 @@ export const Experience: React.FC = () => {
                     {item.technologies.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE]"
+                        className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] rounded-md"
                       >
                         {t}
                       </span>
@@ -123,7 +123,7 @@ export const Experience: React.FC = () => {
             {education.map((edu) => (
               <div
                 key={edu.id}
-                className="border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
+                className="rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
               >
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50">
                   <span className="font-serif text-xl text-[#111111] dark:text-[#F5F3EE] font-normal">

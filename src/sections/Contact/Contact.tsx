@@ -97,7 +97,7 @@ export const Contact: React.FC = () => {
         </div>
 
         <div className="lg:col-span-5">
-          <div className="border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 shadow-xs transition-all duration-300 hover:border-[#005A36]/60 dark:hover:border-[#00A865]/60 hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]">
+          <div className="rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 shadow-xs transition-all duration-300 hover:border-[#005A36]/60 dark:hover:border-[#00A865]/60 hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]">
             <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-sm uppercase tracking-wider font-semibold">
               <span className="text-[#111111] dark:text-[#F5F3EE]">
                 CONTACT DETAILS

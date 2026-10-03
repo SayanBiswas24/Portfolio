@@ -70,7 +70,7 @@ export const Credentials: React.FC = () => {
         {credentials.map((item) => (
           <div
             key={item.id}
-            className="credential-editorial-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]"
+            className="credential-editorial-card rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]"
           >
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50 mb-5">

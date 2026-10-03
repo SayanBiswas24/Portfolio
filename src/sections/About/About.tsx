@@ -73,7 +73,7 @@ export const About: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
+            <div className="about-feature-box rounded-xl p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-sm font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 01 — FULL-STACK
               </div>
@@ -82,7 +82,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
+            <div className="about-feature-box rounded-xl p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-sm font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 02 — MOBILE
               </div>
@@ -91,7 +91,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
+            <div className="about-feature-box rounded-xl p-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-sm font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 03 — SYSTEMS
               </div>
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
           </p>
 
           {/* Principle Box */}
-          <div className="about-prose p-6 border-l-2 border-[#005A36] dark:border-[#00A865] bg-[#FFFFFF] dark:bg-[#1D211D] border border-t-[#D8D5CE] border-r-[#D8D5CE] border-b-[#D8D5CE] dark:border-t-[#2A322A] dark:border-r-[#2A322A] dark:border-b-[#2A322A]">
+          <div className="about-prose rounded-xl p-6 border-l-2 border-[#005A36] dark:border-[#00A865] bg-[#FFFFFF] dark:bg-[#1D211D] border border-t-[#D8D5CE] border-r-[#D8D5CE] border-b-[#D8D5CE] dark:border-t-[#2A322A] dark:border-r-[#2A322A] dark:border-b-[#2A322A]">
             <div className="font-mono text-[12px] text-[#005A36] dark:text-[#00A865] uppercase tracking-wider font-semibold mb-2">
               ENGINEERING PRINCIPLE
             </div>

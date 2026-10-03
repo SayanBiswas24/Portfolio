@@ -157,7 +157,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-sm px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#2A322A] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
+                    className="font-mono text-sm px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#2A322A] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors rounded-md"
                   >
                     {tech}
                   </span>
@@ -208,7 +208,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         >
           <div
             ref={imageContainerRef}
-            className="relative overflow-hidden border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#1D211D] p-2 sm:p-4 transition-all duration-300"
+            className="relative overflow-hidden rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#1D211D] p-2 sm:p-4 transition-all duration-300"
             style={{
               transform: prefersReducedMotion
                 ? "none"
@@ -230,7 +230,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             {project.screenshots && project.screenshots.length > 0 ? (
               project.screenshots.length === 2 ? (
                 /* Dual-Scene 2D Game Showcase */
-                <div className="relative overflow-hidden bg-[#FAF9F6] dark:bg-[#191D19] border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-4">
+                <div className="relative overflow-hidden rounded-lg bg-[#FAF9F6] dark:bg-[#191D19] border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-4">
                   {/* Top CAD Studio Bar */}
                   <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
@@ -286,7 +286,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 </div>
               ) : (
                 /* Multi-Device Smartphone Gallery Showcase (4 screens) */
-                <div className="relative overflow-hidden bg-[#E9E4D9]/20 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-5">
+                <div className="relative overflow-hidden rounded-lg bg-[#E9E4D9]/20 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-5">
                   {/* Top CAD Studio Bar */}
                   <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
@@ -352,7 +352,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               )
             ) : (
               /* Single Image Standard Visual Container */
-              <div className="relative overflow-hidden aspect-[16/10] bg-[#E9E4D9]/40 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60">
+              <div className="relative overflow-hidden rounded-lg aspect-[16/10] bg-[#E9E4D9]/40 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60">
                 <img
                   src={project.image}
                   alt={`${project.title} Architectural Visual`}

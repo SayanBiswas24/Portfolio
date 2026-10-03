@@ -113,7 +113,7 @@ export const Skills: React.FC = () => {
         {toolCategories.map((group) => (
           <div
             key={group.category}
-            className="tool-column-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
+            className="tool-column-card rounded-xl border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
           >
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 mb-5">
