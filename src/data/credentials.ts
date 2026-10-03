@@ -1,39 +1,35 @@
 export interface CredentialItem {
   id: string;
-  category: "Certification" | "Hackathon" | "Award" | "Course";
+  category: "Hackathon" | "Certification" | "Award" | "Course";
   title: string;
   organization: string;
   year: string;
-  url: string;
-  isPlaceholder?: boolean;
+  badge?: string;
+  description?: string;
+  url?: string;
 }
 
 export const credentials: CredentialItem[] = [
   {
     id: "cred-1",
-    category: "Certification",
-    title: "Certificate / Credential Placeholder 01",
-    organization: "Issuing Organization / Authority",
-    year: "2026",
+    category: "Hackathon",
+    title: "Finalist — Ranchi Hacks",
+    organization: "Google Developers Group (GDG)",
+    year: "Jan 2026",
+    badge: "HACKATHON FINALIST",
+    description:
+      "Finalist at the Ranchi Hacks hackathon organized by Google Developers Group (GDG).",
     url: "",
-    isPlaceholder: true,
   },
   {
     id: "cred-2",
     category: "Hackathon",
-    title: "Hackathon Achievement Placeholder 02",
-    organization: "Organizing Body / Event",
-    year: "2025",
+    title: "Finalist — Hackatron 3.0",
+    organization: "HNCC, BIT Sindri",
+    year: "April 2026",
+    badge: "HACKATHON FINALIST",
+    description:
+      "Finalist at Hackatron 3.0 organized by Hackathon and Coding Club (HNCC), BIT Sindri.",
     url: "",
-    isPlaceholder: true,
-  },
-  {
-    id: "cred-3",
-    category: "Course",
-    title: "Specialized Course Credential Placeholder 03",
-    organization: "Academic or Industry Platform",
-    year: "2025",
-    url: "",
-    isPlaceholder: true,
   },
 ];

@@ -109,16 +109,8 @@ export const Navigation: React.FC = () => {
           })}
         </nav>
 
-        {/* Right Side: Available for Work Pill + Theme Toggle */}
+        {/* Right Side: Theme Toggle & Mobile Menu */}
         <div className="flex items-center space-x-3 sm:space-x-4">
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#005A36]/40 dark:border-[#00A865]/40 bg-[#005A36]/5 dark:bg-[#00A865]/10 text-[#005A36] dark:text-[#00A865] font-mono text-[10px] tracking-wider uppercase font-semibold transition-all duration-200 hover:bg-[#005A36]/15 dark:hover:bg-[#00A865]/25 hover:border-[#005A36] dark:hover:border-[#00A865] hover:shadow-[0_0_14px_rgba(0,90,54,0.25)] dark:hover:shadow-[0_0_16px_rgba(0,168,101,0.35)] hover:brightness-110"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-ping" />
-            <span>AVAILABLE FOR WORK</span>
-          </a>
 
           {/* Theme Switcher */}
           <ThemeToggle />
