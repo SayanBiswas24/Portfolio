@@ -82,7 +82,6 @@ export const Process: React.FC = () => {
         onUpdate: (self) => {
           const p = self.progress;
           setScrollProgress(p);
-          // Calculate stage: 0 to 4
           const stageIndex = Math.min(4, Math.floor(p * 5));
           setActiveStage(stageIndex);
         },
@@ -99,16 +98,16 @@ export const Process: React.FC = () => {
     <section
       ref={sectionRef}
       id="process"
-      className="relative min-h-screen flex flex-col justify-center py-20 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center py-20 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26] overflow-hidden"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
         {/* Left Column: Explanation (45%) */}
         <div className="lg:col-span-5 flex flex-col justify-center z-10">
           <SectionLabel label="04 — PROCESS" className="mb-4" />
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111] leading-[1.12] mb-8">
+          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.12] mb-8">
             <span className="block">FROM IDEA</span>
-            <span className="block text-[#005A36]">TO WORKING</span>
+            <span className="block text-[#005A36] dark:text-[#00A865]">TO WORKING</span>
             <span className="block">SOFTWARE.</span>
           </h2>
 
@@ -121,10 +120,10 @@ export const Process: React.FC = () => {
                 onClick={() => setActiveStage(idx)}
                 className={`flex-1 py-1.5 px-2 border text-center font-mono text-[11px] tracking-wider transition-all duration-300 cursor-pointer ${
                   idx === activeStage
-                    ? "border-[#005A36] bg-[#005A36] text-[#F5F3EE] font-semibold"
+                    ? "border-[#005A36] dark:border-[#00A865] bg-[#005A36] dark:bg-[#00A865] text-[#F5F3EE] dark:text-[#0E100E] font-semibold"
                     : idx < activeStage
-                    ? "border-[#2F7D5B] bg-[#E9E4D9]/40 text-[#2F7D5B]"
-                    : "border-[#D8D5CE] bg-transparent text-[#5F5F5A]"
+                    ? "border-[#2F7D5B] dark:border-[#34B37D] bg-[#E9E4D9]/40 dark:bg-[#1A201A] text-[#2F7D5B] dark:text-[#34B37D]"
+                    : "border-[#D8D5CE] dark:border-[#272B26] bg-transparent text-[#5F5F5A] dark:text-[#9E9E98]"
                 }`}
                 aria-label={`Jump to stage ${s.name}`}
               >
@@ -134,33 +133,33 @@ export const Process: React.FC = () => {
           </div>
 
           {/* Active Step Card */}
-          <div className="border border-[#D8D5CE] bg-[#FAF9F6] p-7 transition-all duration-500 shadow-xs">
-            <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60">
-              <div className="flex items-center gap-2 text-[#005A36]">
+          <div className="border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] p-7 transition-all duration-500 shadow-xs">
+            <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60">
+              <div className="flex items-center gap-2 text-[#005A36] dark:text-[#00A865]">
                 <StepIcon size={18} />
                 <span className="font-mono text-sm uppercase tracking-widest font-semibold">
                   STAGE {currentStep.stageNumber} // {currentStep.name}
                 </span>
               </div>
-              <span className="font-mono text-[11px] text-[#5F5F5A] tracking-wider">
+              <span className="font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] tracking-wider">
                 0{activeStage + 1} OF 05
               </span>
             </div>
 
             {/* Core stage prompt text */}
-            <blockquote className="font-serif text-xl sm:text-2xl text-[#111111] leading-snug mt-5 mb-4">
+            <blockquote className="font-serif text-xl sm:text-2xl text-[#111111] dark:text-[#F5F3EE] leading-snug mt-5 mb-4">
               "{currentStep.text}"
             </blockquote>
 
             {/* In-depth elaboration */}
-            <p className="font-sans text-sm text-[#5F5F5A] leading-relaxed">
+            <p className="font-sans text-sm text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
               {currentStep.details}
             </p>
 
             {/* Bottom Progress Bar */}
-            <div className="mt-6 pt-4 border-t border-[#D8D5CE]/60 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A]">
+            <div className="mt-6 pt-4 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
               <span>PIPELINE CONTINUUM</span>
-              <span className="text-[#005A36] font-semibold">
+              <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
                 {Math.round(((activeStage + 1) / 5) * 100)}% COMPLETE
               </span>
             </div>
@@ -168,9 +167,8 @@ export const Process: React.FC = () => {
         </div>
 
         {/* Right Column: 3D Scene (55%) */}
-        <div className="lg:col-span-7 flex items-center justify-center relative border border-[#D8D5CE] bg-[#FAF9F6] p-2 sm:p-6">
-          {/* Subtle architectural coordinates header */}
-          <div className="absolute top-4 right-4 font-mono text-[9px] text-[#5F5F5A]/60 uppercase tracking-widest pointer-events-none">
+        <div className="lg:col-span-7 flex items-center justify-center relative border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] p-2 sm:p-6">
+          <div className="absolute top-4 right-4 font-mono text-[9px] text-[#5F5F5A]/60 dark:text-[#9E9E98]/60 uppercase tracking-widest pointer-events-none">
             3D.STATE.SPACE // CAMERA LINKED
           </div>
           <ProcessNetwork activeStage={activeStage} progress={scrollProgress} />

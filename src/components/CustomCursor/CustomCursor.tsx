@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTheme } from "@/context/ThemeContext";
 
 export const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const cursorTextRef = useRef<HTMLSpanElement>(null);
   const prefersReducedMotion = useReducedMotion();
+  const { isDark } = useTheme();
 
   const [cursorText, setCursorText] = useState("");
   const [isHovering, setIsHovering] = useState(false);
@@ -98,7 +100,11 @@ export const CustomCursor: React.FC = () => {
       <div
         className={`flex items-center justify-center rounded-full transition-all duration-300 ${
           isHovering
-            ? "w-10 h-10 bg-[#005A36] text-[#F5F3EE] shadow-sm"
+            ? isDark
+              ? "w-10 h-10 bg-[#00A865] text-[#0E100E] shadow-sm"
+              : "w-10 h-10 bg-[#005A36] text-[#F5F3EE] shadow-sm"
+            : isDark
+            ? "w-2.5 h-2.5 bg-[#00A865]/90"
             : "w-2.5 h-2.5 bg-[#005A36]/80"
         }`}
       >

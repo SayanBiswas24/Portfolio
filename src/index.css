@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-  --color-canvas: #F5F3EE;
-  --color-canvas-light: #FAF9F6;
-  --color-primary: #111111;
-  --color-secondary: #5F5F5A;
-  --color-neutral-border: #D8D5CE;
-  --color-neutral-border-light: #E7E4DC;
-  --color-accent: #005A36;
-  --color-accent-muted: #2F7D5B;
-  --color-accent-tint: rgba(0, 90, 54, 0.08);
-  --color-highlight: #E9E4D9;
+  --color-canvas: var(--bg-canvas);
+  --color-canvas-light: var(--bg-card);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+  --color-neutral-border: var(--border-color);
+  --color-neutral-border-light: var(--border-light);
+  --color-accent: var(--accent-color);
+  --color-accent-muted: var(--accent-muted);
+  --color-highlight: var(--highlight-color);
 
   --font-serif: "Playfair Display", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -20,30 +21,47 @@
 :root {
   color-scheme: light;
   --bg-canvas: #F5F3EE;
+  --bg-card: #FAF9F6;
   --text-primary: #111111;
   --text-secondary: #5F5F5A;
   --border-color: #D8D5CE;
+  --border-light: #E7E4DC;
   --accent-color: #005A36;
   --accent-muted: #2F7D5B;
   --highlight-color: #E9E4D9;
 }
 
+.dark {
+  color-scheme: dark;
+  --bg-canvas: #0E100E;
+  --bg-card: #151815;
+  --text-primary: #F5F3EE;
+  --text-secondary: #9E9E98;
+  --border-color: #272B26;
+  --border-light: #1D211D;
+  --accent-color: #00A865;
+  --accent-muted: #34B37D;
+  --highlight-color: #1A201A;
+}
+
 html {
-  background-color: #F5F3EE;
-  color: #111111;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #F5F3EE;
-  color: #111111;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
   overflow-x: hidden;
   width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -52,6 +70,8 @@ body {
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
 }
 
 /* Custom scrollbar */
@@ -59,13 +79,13 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F3EE;
+  background: var(--bg-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8D5CE;
+  background: var(--border-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2F7D5B;
+  background: var(--accent-muted);
 }
 
 /* Reduced motion adjustments */

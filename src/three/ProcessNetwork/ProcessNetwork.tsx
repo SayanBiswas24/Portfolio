@@ -4,11 +4,13 @@ import * as THREE from "three";
 import { ProcessNode } from "./ProcessNode";
 import { ProcessConnections } from "./ProcessConnections";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTheme } from "@/context/ThemeContext";
 
 interface ProcessSceneProps {
   activeStage: number; // 0 to 4
   progress: number; // 0 to 1
   prefersReducedMotion: boolean;
+  isDark: boolean;
 }
 
 const STAGES = ["IDEA", "DESIGN", "CODE", "TEST", "DEPLOY"];
@@ -17,6 +19,7 @@ const ProcessScene: React.FC<ProcessSceneProps> = ({
   activeStage,
   progress,
   prefersReducedMotion,
+  isDark,
 }) => {
   const groupRef = useRef<THREE.Group>(null);
   const cameraTarget = useRef(new THREE.Vector3(0, 0, 0));
@@ -54,7 +57,6 @@ const ProcessScene: React.FC<ProcessSceneProps> = ({
       state.camera.lookAt(cameraTarget.current);
 
       // Camera position moves subtly along with scroll progress
-      // total camera move: ~0.8 units Y and ~0.4 units Z
       const targetCamY = 0.5 - progress * 1.0;
       const targetCamZ = 4.8 + Math.sin(progress * Math.PI) * 0.5;
       state.camera.position.y = THREE.MathUtils.lerp(
@@ -86,11 +88,12 @@ const ProcessScene: React.FC<ProcessSceneProps> = ({
           isPast={idx < activeStage}
           label={STAGES[idx]}
           stageNumber={`0${idx + 1}`}
+          isDark={isDark}
         />
       ))}
 
       {/* Progressing Connections */}
-      <ProcessConnections nodes={nodes} activeStage={activeStage} />
+      <ProcessConnections nodes={nodes} activeStage={activeStage} isDark={isDark} />
     </group>
   );
 };
@@ -105,6 +108,7 @@ export const ProcessNetwork: React.FC<ProcessNetworkProps> = ({
   progress,
 }) => {
   const prefersReducedMotion = useReducedMotion();
+  const { isDark } = useTheme();
 
   return (
     <div
@@ -117,21 +121,30 @@ export const ProcessNetwork: React.FC<ProcessNetworkProps> = ({
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         className="w-full h-full"
       >
-        <ambientLight intensity={0.85} />
-        <directionalLight position={[6, 8, 4]} intensity={1.1} color="#FAF9F6" />
-        <pointLight position={[-3, -4, 2]} intensity={1.2} color="#005A36" />
+        <ambientLight intensity={isDark ? 0.75 : 0.85} />
+        <directionalLight
+          position={[6, 8, 4]}
+          intensity={isDark ? 0.95 : 1.1}
+          color={isDark ? "#E1E8E3" : "#FAF9F6"}
+        />
+        <pointLight
+          position={[-3, -4, 2]}
+          intensity={isDark ? 1.4 : 1.2}
+          color={isDark ? "#00A865" : "#005A36"}
+        />
 
         <Suspense fallback={null}>
           <ProcessScene
             activeStage={activeStage}
             progress={progress}
             prefersReducedMotion={prefersReducedMotion}
+            isDark={isDark}
           />
         </Suspense>
       </Canvas>
 
       {/* Technical coordinate frame watermark */}
-      <div className="absolute bottom-2 left-2 font-mono text-[9px] text-[#5F5F5A]/60 uppercase tracking-widest pointer-events-none">
+      <div className="absolute bottom-2 left-2 font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98]/60 uppercase tracking-widest pointer-events-none">
         PIPELINE // STAGE: {STAGES[activeStage]} (0{activeStage + 1}/05)
       </div>
     </div>

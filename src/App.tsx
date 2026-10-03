@@ -9,46 +9,49 @@ import { Credentials } from "@/sections/Credentials/Credentials";
 import { Contact } from "@/sections/Contact/Contact";
 import { Footer } from "@/components/Footer/Footer";
 import { CustomCursor } from "@/components/CustomCursor/CustomCursor";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export function App() {
   return (
-    <div className="relative min-h-screen bg-[#F5F3EE] text-[#111111] overflow-x-hidden selection:bg-[#005A36] selection:text-[#F5F3EE]">
-      {/* Interactive custom cursor for desktop */}
-      <CustomCursor />
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#0E100E]">
+        {/* Interactive custom cursor for desktop */}
+        <CustomCursor />
 
-      {/* Fixed editorial navigation */}
-      <Navigation />
+        {/* Fixed editorial navigation with theme switch */}
+        <Navigation />
 
-      {/* Main Single Page Content */}
-      <main id="main-content" className="relative z-10 w-full">
-        {/* Hero with 3D Systems Network */}
-        <Hero />
+        {/* Main Single Page Content */}
+        <main id="main-content" className="relative z-10 w-full">
+          {/* Hero with 3D Systems Network */}
+          <Hero />
 
-        {/* 01 — About */}
-        <About />
+          {/* 01 — About */}
+          <About />
 
-        {/* 02 — Technologies */}
-        <Skills />
+          {/* 02 — Technologies */}
+          <Skills />
 
-        {/* 03 — Selected Work */}
-        <Projects />
+          {/* 03 — Selected Work */}
+          <Projects />
 
-        {/* 04 — Process with Scroll-Linked 3D Pipeline */}
-        <Process />
+          {/* 04 — Process with Scroll-Linked 3D Pipeline */}
+          <Process />
 
-        {/* 05 — Experience & Education */}
-        <Experience />
+          {/* 05 — Experience & Education */}
+          <Experience />
 
-        {/* 06 — Credentials */}
-        <Credentials />
+          {/* 06 — Credentials */}
+          <Credentials />
 
-        {/* 07 — Contact */}
-        <Contact />
-      </main>
+          {/* 07 — Contact */}
+          <Contact />
+        </main>
 
-      {/* Minimalist Footer */}
-      <Footer />
-    </div>
+        {/* Minimalist Footer */}
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

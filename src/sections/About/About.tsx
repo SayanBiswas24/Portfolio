@@ -54,7 +54,7 @@ export const About: React.FC = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE]"
+      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26]"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* Left Column: Label & Heading */}
@@ -63,12 +63,12 @@ export const About: React.FC = () => {
 
           <h2
             ref={headingRef}
-            className="font-serif text-3xl sm:text-5xl lg:text-5xl font-medium tracking-tight text-[#111111] leading-[1.15]"
+            className="font-serif text-3xl sm:text-5xl lg:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.15]"
           >
             <span className="about-heading-line block">
               I LIKE BUILDING THINGS
             </span>
-            <span className="about-heading-line block text-[#005A36]">
+            <span className="about-heading-line block text-[#005A36] dark:text-[#00A865]">
               AND UNDERSTANDING
             </span>
             <span className="about-heading-line block">
@@ -77,33 +77,33 @@ export const About: React.FC = () => {
           </h2>
 
           {/* Core Focus Badges */}
-          <div className="mt-12 pt-8 border-t border-[#D8D5CE]/60 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="about-card p-4 border border-[#D8D5CE] bg-[#FAF9F6] transition-colors hover:border-[#005A36]">
-              <Terminal size={18} className="text-[#005A36] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] font-semibold">
+          <div className="mt-12 pt-8 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
+              <Terminal size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
+              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
                 FULL-STACK
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] mt-1">
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
                 From DB queries to UI state
               </div>
             </div>
 
-            <div className="about-card p-4 border border-[#D8D5CE] bg-[#FAF9F6] transition-colors hover:border-[#005A36]">
-              <Layers size={18} className="text-[#005A36] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] font-semibold">
+            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
+              <Layers size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
+              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
                 MOBILE APPS
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] mt-1">
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
                 Flutter cross-platform logic
               </div>
             </div>
 
-            <div className="about-card p-4 border border-[#D8D5CE] bg-[#FAF9F6] transition-colors hover:border-[#005A36]">
-              <Cpu size={18} className="text-[#005A36] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] font-semibold">
+            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
+              <Cpu size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
+              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
                 AI SYSTEMS
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] mt-1">
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
                 Conversational & voice workflows
               </div>
             </div>
@@ -112,24 +112,24 @@ export const About: React.FC = () => {
 
         {/* Right Column: Bio Prose & Principles */}
         <div className="lg:col-span-6 flex flex-col justify-center space-y-6 lg:pl-6">
-          <p className="about-content-p font-sans text-lg sm:text-xl text-[#111111] font-normal leading-relaxed">
+          <p className="about-content-p font-sans text-lg sm:text-xl text-[#111111] dark:text-[#F5F3EE] font-normal leading-relaxed">
             I'm Sayan Biswas, a developer focused primarily on Flutter and full-stack development.
           </p>
 
-          <p className="about-content-p font-sans text-base text-[#5F5F5A] leading-relaxed">
+          <p className="about-content-p font-sans text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
             I enjoy building products from the interface all the way to the backend, experimenting with new technologies, and learning by actually creating things.
           </p>
 
-          <p className="about-content-p font-sans text-base text-[#5F5F5A] leading-relaxed">
+          <p className="about-content-p font-sans text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
             My current interests include mobile development, backend systems, APIs, AI-powered applications, and developer tooling.
           </p>
 
           {/* Technical Spec Quote Box */}
-          <div className="about-content-p mt-6 p-6 border-l-2 border-[#005A36] bg-[#E9E4D9]/30">
-            <div className="font-mono text-xs text-[#005A36] tracking-wider uppercase mb-1">
+          <div className="about-content-p mt-6 p-6 border-l-2 border-[#005A36] dark:border-[#00A865] bg-[#E9E4D9]/30 dark:bg-[#1A201A]/50">
+            <div className="font-mono text-xs text-[#005A36] dark:text-[#00A865] tracking-wider uppercase mb-1">
               PHILOSOPHY // ENGINEERING PRINCIPLE
             </div>
-            <p className="font-serif italic text-base text-[#111111]">
+            <p className="font-serif italic text-base text-[#111111] dark:text-[#F5F3EE]">
               "Clarity over complexity. Build the smallest functional kernel, measure its real-world behavior, and refine through continuous iterations."
             </p>
           </div>

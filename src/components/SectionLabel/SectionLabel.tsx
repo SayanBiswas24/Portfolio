@@ -14,9 +14,9 @@ export const SectionLabel: React.FC<SectionLabelProps> = ({
   return (
     <div
       id={id}
-      className={`section-label inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-[#005A36] select-none ${className}`}
+      className={`section-label inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-[#005A36] dark:text-[#00A865] select-none ${className}`}
     >
-      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#005A36]" />
+      <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
       <span>{label}</span>
     </div>
   );

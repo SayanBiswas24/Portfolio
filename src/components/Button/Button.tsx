@@ -26,17 +26,17 @@ export const Button: React.FC<ButtonProps> = ({
   id,
 }) => {
   const baseStyles =
-    "group inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider transition-all duration-300 select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#005A36] focus-visible:outline-offset-2";
+    "group inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider transition-all duration-300 select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] focus-visible:outline-offset-2";
 
   const variantStyles = {
     primary:
-      "bg-[#005A36] text-[#F5F3EE] px-6 py-3.5 border border-[#005A36] hover:bg-[#2F7D5B] hover:border-[#2F7D5B] hover:shadow-xs",
+      "bg-[#005A36] dark:bg-[#00A865] text-[#F5F3EE] dark:text-[#0E100E] border border-[#005A36] dark:border-[#00A865] hover:bg-[#2F7D5B] dark:hover:bg-[#34B37D] hover:border-[#2F7D5B] dark:hover:border-[#34B37D] font-medium shadow-xs",
     secondary:
-      "bg-transparent text-[#111111] px-6 py-3.5 border border-[#D8D5CE] hover:border-[#005A36] hover:text-[#005A36] hover:bg-[#E9E4D9]/40",
+      "bg-transparent text-[#111111] dark:text-[#F5F3EE] px-6 py-3.5 border border-[#D8D5CE] dark:border-[#272B26] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] hover:bg-[#E9E4D9]/40 dark:hover:bg-[#1A201A]/60",
     outline:
-      "bg-[#F5F3EE] text-[#111111] px-5 py-3 border border-[#D8D5CE] hover:border-[#005A36] hover:text-[#005A36]",
+      "bg-[#F5F3EE] dark:bg-[#0E100E] text-[#111111] dark:text-[#F5F3EE] px-5 py-3 border border-[#D8D5CE] dark:border-[#272B26] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865]",
     link:
-      "bg-transparent text-[#111111] px-0 py-1 hover:text-[#005A36] border-b border-transparent hover:border-[#005A36]",
+      "bg-transparent text-[#111111] dark:text-[#F5F3EE] px-0 py-1 hover:text-[#005A36] dark:hover:text-[#00A865] border-b border-transparent hover:border-[#005A36] dark:hover:border-[#00A865]",
   };
 
   const content = (
@@ -60,7 +60,9 @@ export const Button: React.FC<ButtonProps> = ({
         href={href}
         target={target}
         rel={rel || (target === "_blank" ? "noopener noreferrer" : undefined)}
-        className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+        className={`${baseStyles} ${variantStyles[variant]} ${
+          variant === "primary" ? "px-6 py-3.5" : ""
+        } ${className}`}
         onClick={onClick}
       >
         {content}
@@ -72,7 +74,9 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       id={id}
       type="button"
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${
+        variant === "primary" ? "px-6 py-3.5" : ""
+      } ${className}`}
       onClick={onClick}
     >
       {content}

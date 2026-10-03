@@ -4,11 +4,13 @@ import * as THREE from "three";
 interface ProcessConnectionsProps {
   nodes: [number, number, number][];
   activeStage: number; // 0 to 4
+  isDark?: boolean;
 }
 
 export const ProcessConnections: React.FC<ProcessConnectionsProps> = ({
   nodes,
   activeStage,
+  isDark = false,
 }) => {
   // Segments between adjacent nodes
   const segments = useMemo(() => {
@@ -37,11 +39,17 @@ export const ProcessConnections: React.FC<ProcessConnectionsProps> = ({
         const geom = new THREE.BufferGeometry().setFromPoints(seg.points);
         const color =
           seg.status === "past"
-            ? "#2F7D5B"
+            ? isDark
+              ? "#34B37D"
+              : "#2F7D5B"
             : seg.status === "active"
-            ? "#005A36"
+            ? isDark
+              ? "#00A865"
+              : "#005A36"
+            : isDark
+            ? "#272E27"
             : "#D8D5CE";
-        const opacity = seg.status === "upcoming" ? 0.35 : 0.85;
+        const opacity = seg.status === "upcoming" ? (isDark ? 0.45 : 0.35) : 0.85;
 
         return (
           <lineSegments key={idx} geometry={geom}>

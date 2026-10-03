@@ -60,17 +60,17 @@ export const Projects: React.FC = () => {
     <section
       ref={sectionRef}
       id="work"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE]"
+      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26]"
     >
       {/* Header */}
-      <div className="projects-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#D8D5CE]">
+      <div className="projects-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#D8D5CE] dark:border-[#272B26]">
         <div>
           <SectionLabel label="03 — SELECTED WORK" className="mb-4" />
-          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111]">
+          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE]">
             THINGS I'VE BUILT
           </h2>
         </div>
-        <div className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] max-w-sm">
+        <div className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm">
           A selection of mobile applications, full-stack systems, and experimental interfaces built for utility.
         </div>
       </div>

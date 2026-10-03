@@ -8,12 +8,14 @@ interface ProcessNodeProps {
   isPast: boolean;
   label: string;
   stageNumber: string;
+  isDark?: boolean;
 }
 
 export const ProcessNode: React.FC<ProcessNodeProps> = ({
   position,
   isActive,
   isPast,
+  isDark = false,
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const ringRef = useRef<THREE.Mesh>(null);
@@ -34,10 +36,18 @@ export const ProcessNode: React.FC<ProcessNodeProps> = ({
   });
 
   const nodeColor = isActive
-    ? "#005A36"
+    ? isDark
+      ? "#00A865"
+      : "#005A36"
     : isPast
-    ? "#2F7D5B"
+    ? isDark
+      ? "#34B37D"
+      : "#2F7D5B"
+    : isDark
+    ? "#384238"
     : "#5F5F5A";
+
+  const ringColor = isDark ? "#00A865" : "#005A36";
 
   return (
     <group position={position}>
@@ -48,8 +58,8 @@ export const ProcessNode: React.FC<ProcessNodeProps> = ({
           color={nodeColor}
           roughness={0.3}
           metalness={0.2}
-          emissive={isActive ? "#003822" : "#000000"}
-          emissiveIntensity={isActive ? 0.4 : 0}
+          emissive={isActive ? (isDark ? "#00683E" : "#003822") : "#000000"}
+          emissiveIntensity={isActive ? (isDark ? 0.6 : 0.4) : 0}
         />
       </mesh>
 
@@ -57,7 +67,7 @@ export const ProcessNode: React.FC<ProcessNodeProps> = ({
       {isActive && (
         <mesh ref={ringRef} rotation={[Math.PI / 4, 0, 0]}>
           <torusGeometry args={[0.42, 0.02, 16, 32]} />
-          <meshBasicMaterial color="#005A36" transparent opacity={0.7} />
+          <meshBasicMaterial color={ringColor} transparent opacity={isDark ? 0.85 : 0.7} />
         </mesh>
       )}
 
@@ -65,7 +75,7 @@ export const ProcessNode: React.FC<ProcessNodeProps> = ({
       {isActive && (
         <mesh position={[0.45, 0, 0]}>
           <sphereGeometry args={[0.06, 16, 16]} />
-          <meshBasicMaterial color="#2F7D5B" />
+          <meshBasicMaterial color={isDark ? "#34B37D" : "#2F7D5B"} />
         </mesh>
       )}
     </group>

@@ -4,15 +4,18 @@ import * as THREE from "three";
 import { NetworkNode } from "./NetworkNode";
 import { NetworkConnections } from "./NetworkConnections";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { useTheme } from "@/context/ThemeContext";
 
 interface NetworkSceneProps {
   mouse: { x: number; y: number };
   prefersReducedMotion: boolean;
+  isDark: boolean;
 }
 
 const NetworkScene: React.FC<NetworkSceneProps> = ({
   mouse,
   prefersReducedMotion,
+  isDark,
 }) => {
   const groupRef = useRef<THREE.Group>(null);
   const baseRotationY = useRef(0);
@@ -66,8 +69,7 @@ const NetworkScene: React.FC<NetworkSceneProps> = ({
       // Floating sine motion (6-10px equivalent in world units)
       const floatY = Math.sin(state.clock.getElapsedTime() * 1.2) * 0.12;
 
-      // Mouse response:
-      // max rotX: ±4 deg (0.07 rad), max rotY: ±6 deg (0.1 rad)
+      // Mouse response
       const targetRotX = mouse.y * 0.07;
       const targetRotY = baseRotationY.current + mouse.x * 0.1;
       const targetPosX = mouse.x * 0.15;
@@ -112,7 +114,7 @@ const NetworkScene: React.FC<NetworkSceneProps> = ({
       <NetworkNode
         position={nodes[0]}
         isCenter={true}
-        color="#005A36"
+        color={isDark ? "#00A865" : "#005A36"}
         size={0.42}
         pulseSpeed={1.2}
       />
@@ -123,7 +125,15 @@ const NetworkScene: React.FC<NetworkSceneProps> = ({
           key={idx + 1}
           position={pos}
           isCenter={false}
-          color={idx % 2 === 0 ? "#2F7D5B" : "#111111"}
+          color={
+            isDark
+              ? idx % 2 === 0
+                ? "#34B37D"
+                : "#424D42"
+              : idx % 2 === 0
+              ? "#2F7D5B"
+              : "#111111"
+          }
           size={0.22}
         />
       ))}
@@ -132,8 +142,8 @@ const NetworkScene: React.FC<NetworkSceneProps> = ({
       <NetworkConnections
         nodes={nodes}
         edges={edges}
-        color="#2F7D5B"
-        opacity={0.42}
+        color={isDark ? "#34B37D" : "#2F7D5B"}
+        opacity={isDark ? 0.48 : 0.42}
       />
     </group>
   );
@@ -145,6 +155,7 @@ interface HeroNetworkProps {
 
 export const HeroNetwork: React.FC<HeroNetworkProps> = ({ mouse }) => {
   const prefersReducedMotion = useReducedMotion();
+  const { isDark } = useTheme();
   const currentMouse = mouse || { normalizedX: 0, normalizedY: 0 };
 
   return (
@@ -158,22 +169,31 @@ export const HeroNetwork: React.FC<HeroNetworkProps> = ({ mouse }) => {
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         className="w-full h-full"
       >
-        {/* Simple restrained lighting */}
-        <ambientLight intensity={0.8} />
-        <directionalLight position={[5, 8, 5]} intensity={1.1} color="#FAF9F6" />
-        {/* Subtle forest green accent light */}
-        <pointLight position={[-4, -3, 2]} intensity={1.2} color="#005A36" />
+        {/* Restrained lighting */}
+        <ambientLight intensity={isDark ? 0.7 : 0.8} />
+        <directionalLight
+          position={[5, 8, 5]}
+          intensity={isDark ? 0.9 : 1.1}
+          color={isDark ? "#E1E8E3" : "#FAF9F6"}
+        />
+        {/* Green accent light */}
+        <pointLight
+          position={[-4, -3, 2]}
+          intensity={isDark ? 1.4 : 1.2}
+          color={isDark ? "#00A865" : "#005A36"}
+        />
 
         <Suspense fallback={null}>
           <NetworkScene
             mouse={{ x: currentMouse.normalizedX, y: currentMouse.normalizedY }}
             prefersReducedMotion={prefersReducedMotion}
+            isDark={isDark}
           />
         </Suspense>
       </Canvas>
 
       {/* Subtle bottom technical caption */}
-      <div className="absolute bottom-2 right-2 font-mono text-[9px] text-[#5F5F5A]/70 uppercase tracking-widest pointer-events-none hidden sm:block">
+      <div className="absolute bottom-2 right-2 font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98]/70 uppercase tracking-widest pointer-events-none hidden sm:block">
         SYS.GEOM // 09 NODES ACTIVE
       </div>
     </div>

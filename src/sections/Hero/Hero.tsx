@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
           "-=0.8"
         );
 
-      // 2. Hero exit scroll animation (Section 10)
+      // 2. Hero exit scroll animation
       if (containerRef.current && contentRef.current && visualRef.current) {
         ScrollTrigger.create({
           trigger: containerRef.current,
@@ -61,12 +61,10 @@ export const Hero: React.FC = () => {
           scrub: true,
           onUpdate: (self) => {
             const p = self.progress;
-            // Typography moves upward 40-60px, opacity decreases 1 -> 0.25
             gsap.set(contentRef.current, {
               y: -p * 60,
               opacity: 1 - p * 0.75,
             });
-            // 3D object moves slightly upward, rotates 10-15 deg, opacity decreases
             gsap.set(visualRef.current, {
               y: -p * 50,
               rotationZ: p * 12,
@@ -95,22 +93,22 @@ export const Hero: React.FC = () => {
         {/* Left Typography Column: 55-60% */}
         <div ref={contentRef} className="lg:col-span-7 flex flex-col z-10">
           {/* Header Metadata */}
-          <div className="hero-meta flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-[#005A36] mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#005A36] animate-pulse" />
+          <div className="hero-meta flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-[#005A36] dark:text-[#00A865] mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse" />
             <span className="font-semibold">{personalInfo.name.toUpperCase()}</span>
-            <span className="text-[#D8D5CE]">/</span>
-            <span className="text-[#5F5F5A]">{personalInfo.role.toUpperCase()}</span>
+            <span className="text-[#D8D5CE] dark:text-[#272B26]">/</span>
+            <span className="text-[#5F5F5A] dark:text-[#9E9E98]">{personalInfo.role.toUpperCase()}</span>
           </div>
 
           {/* Main Editorial Heading */}
           <h1
             ref={headingRef}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-[#111111] leading-[1.08] my-4"
+            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.08] my-4"
           >
             <span className="hero-heading-line block overflow-hidden">
               I BUILD SOFTWARE
             </span>
-            <span className="hero-heading-line block overflow-hidden text-[#005A36]">
+            <span className="hero-heading-line block overflow-hidden text-[#005A36] dark:text-[#00A865]">
               THAT SOLVES
             </span>
             <span className="hero-heading-line block overflow-hidden">
@@ -119,7 +117,7 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Description */}
-          <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] leading-relaxed max-w-xl mt-4 mb-8">
+          <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mt-4 mb-8">
             {personalInfo.shortBio}
           </p>
 
@@ -145,12 +143,12 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Technical Status Pill */}
-          <div className="hero-meta mt-10 pt-6 border-t border-[#D8D5CE]/60 flex items-center gap-4 font-mono text-[11px] text-[#5F5F5A] uppercase tracking-wider">
-            <span className="inline-flex items-center gap-1.5 text-[#005A36]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#005A36]" />
+          <div className="hero-meta mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center gap-4 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 text-[#005A36] dark:text-[#00A865]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
               AVAILABILITY: OPEN
             </span>
-            <span className="text-[#D8D5CE]">•</span>
+            <span className="text-[#D8D5CE] dark:text-[#272B26]">•</span>
             <span>STACK: FLUTTER / NODE / TYPESCRIPT</span>
           </div>
         </div>
@@ -161,8 +159,8 @@ export const Hero: React.FC = () => {
           className="lg:col-span-5 flex items-center justify-center relative w-full h-[320px] sm:h-[400px] lg:h-[500px]"
         >
           {/* Subtle background guide box */}
-          <div className="absolute inset-2 border border-[#D8D5CE]/40 pointer-events-none rounded-xs hidden sm:block" />
-          <div className="absolute top-4 left-4 font-mono text-[9px] text-[#5F5F5A]/50 uppercase tracking-widest pointer-events-none">
+          <div className="absolute inset-2 border border-[#D8D5CE]/40 dark:border-[#272B26]/60 pointer-events-none rounded-xs hidden sm:block" />
+          <div className="absolute top-4 left-4 font-mono text-[9px] text-[#5F5F5A]/50 dark:text-[#9E9E98]/50 uppercase tracking-widest pointer-events-none">
             3D.NODE.NETWORK // v1.0
           </div>
           <HeroNetwork mouse={mouse} />
@@ -170,11 +168,11 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Bottom Scroll Indicator */}
-      <div className="flex items-center justify-between pt-8 border-t border-[#D8D5CE]/50 font-mono text-[10px] text-[#5F5F5A] uppercase tracking-wider select-none">
+      <div className="flex items-center justify-between pt-8 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
         <span className="hidden sm:inline">COORDINATES: LAT 22.57° N / LON 88.36° E</span>
         <button
           onClick={scrollToWork}
-          className="flex items-center gap-2 hover:text-[#005A36] transition-colors mx-auto sm:mx-0 group cursor-pointer"
+          className="flex items-center gap-2 hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors mx-auto sm:mx-0 group cursor-pointer"
           aria-label="Scroll down to explore work"
         >
           <span>SCROLL TO EXPLORE</span>
