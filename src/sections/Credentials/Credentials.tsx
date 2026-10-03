@@ -81,7 +81,7 @@ export const Credentials: React.FC = () => {
           return (
             <div
               key={item.id}
-              className="credential-editorial-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-7 flex flex-col justify-between transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]"
+              className="credential-editorial-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
             >
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50 mb-5">

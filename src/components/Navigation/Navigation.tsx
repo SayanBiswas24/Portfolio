@@ -73,10 +73,10 @@ export const Navigation: React.FC = () => {
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
-          className="group flex items-center gap-2.5 text-left focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
+          className="group flex items-center gap-2.5 text-left focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] px-2.5 py-1.5 -ml-2.5 rounded-full transition-all duration-200 hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15"
           aria-label="Sayan Biswas Home"
         >
-          <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse group-hover:scale-125 transition-transform" />
           <span className="font-mono text-xs tracking-widest font-semibold uppercase text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors duration-200">
             {personalInfo.name.toUpperCase()}
           </span>
@@ -84,7 +84,7 @@ export const Navigation: React.FC = () => {
 
         {/* Center Desktop Nav Links */}
         <nav
-          className="hidden lg:flex items-center space-x-6"
+          className="hidden lg:flex items-center space-x-1"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => {
@@ -94,13 +94,15 @@ export const Navigation: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`font-mono text-[11px] tracking-wider transition-colors duration-200 py-1 flex items-center gap-1 ${
+                className={`font-mono text-[11px] tracking-wider transition-all duration-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 select-none ${
                   isActive
-                    ? "text-[#005A36] dark:text-[#00A865] font-semibold"
-                    : "text-[#5F5F5A] dark:text-[#9E9E98] hover:text-[#111111] dark:hover:text-[#F5F3EE]"
+                    ? "text-[#005A36] dark:text-[#00A865] bg-[#005A36]/10 dark:bg-[#00A865]/15 font-semibold"
+                    : "text-[#5F5F5A] dark:text-[#9E9E98] hover:text-[#111111] dark:hover:text-[#F5F3EE] hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 hover:shadow-[0_0_12px_rgba(0,90,54,0.1)] dark:hover:shadow-[0_0_12px_rgba(0,168,101,0.15)]"
                 }`}
               >
-                <span className="text-[10px] opacity-60">{item.number}.</span>
+                <span className={`text-[10px] ${isActive ? "text-[#005A36] dark:text-[#00A865]" : "opacity-60"}`}>
+                  {item.number}.
+                </span>
                 <span>{item.label}</span>
               </a>
             );
@@ -112,7 +114,7 @@ export const Navigation: React.FC = () => {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, "#contact")}
-            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#005A36]/40 dark:border-[#00A865]/40 bg-[#005A36]/5 dark:bg-[#00A865]/10 text-[#005A36] dark:text-[#00A865] font-mono text-[10px] tracking-wider uppercase font-semibold hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/20 transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#005A36]/40 dark:border-[#00A865]/40 bg-[#005A36]/5 dark:bg-[#00A865]/10 text-[#005A36] dark:text-[#00A865] font-mono text-[10px] tracking-wider uppercase font-semibold transition-all duration-200 hover:bg-[#005A36]/15 dark:hover:bg-[#00A865]/25 hover:border-[#005A36] dark:hover:border-[#00A865] hover:shadow-[0_0_14px_rgba(0,90,54,0.25)] dark:hover:shadow-[0_0_16px_rgba(0,168,101,0.35)] hover:brightness-110"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-ping" />
             <span>AVAILABLE FOR WORK</span>
@@ -126,7 +128,7 @@ export const Navigation: React.FC = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
+              className="p-1.5 rounded-md text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 transition-all focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
             >

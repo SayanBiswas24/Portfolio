@@ -99,7 +99,7 @@ export const Contact: React.FC = () => {
 
         {/* Right Column: Direct Dispatch Desk Card */}
         <div className="lg:col-span-5">
-          <div className="border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 shadow-xs">
+          <div className="border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 shadow-xs transition-all duration-300 hover:border-[#005A36]/60 dark:hover:border-[#00A865]/60 hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]">
             <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-xs uppercase tracking-wider font-semibold">
               <span className="text-[#111111] dark:text-[#F5F3EE]">
                 DIRECT DISPATCH DESK
@@ -117,7 +117,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <a
                   href={emailHref}
-                  className="font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors break-all"
+                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200 break-all"
                 >
                   {personalInfo.email}
                 </a>
@@ -132,7 +132,7 @@ export const Contact: React.FC = () => {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
+                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200"
                 >
                   {personalInfo.github}
                 </a>
@@ -147,7 +147,7 @@ export const Contact: React.FC = () => {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
+                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200"
                 >
                   {personalInfo.linkedin}
                 </a>

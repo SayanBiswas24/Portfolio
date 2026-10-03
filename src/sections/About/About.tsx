@@ -79,7 +79,7 @@ export const About: React.FC = () => {
 
           {/* 3 Horizontal Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 01 — FULL-STACK
               </div>
@@ -88,7 +88,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 02 — MOBILE
               </div>
@@ -97,7 +97,7 @@ export const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_2px_12px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_0_15px_rgba(0,168,101,0.06)]">
               <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
                 03 — SYSTEMS
               </div>

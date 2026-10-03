@@ -17,12 +17,11 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
     <button
       type="button"
       onClick={toggleTheme}
-      className={`group relative inline-flex items-center gap-2 p-2 border transition-all duration-300 cursor-pointer select-none rounded-xs focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] ${
+      className={`group relative inline-flex items-center justify-center gap-2 p-2 border transition-all duration-200 cursor-pointer select-none rounded-full focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] ${
         isDark
-          ? "border-[#272B26] bg-[#151815] text-[#F5F3EE] hover:border-[#00A865] hover:text-[#00A865]"
-          : "border-[#D8D5CE] bg-[#FAF9F6] text-[#111111] hover:border-[#005A36] hover:text-[#005A36]"
+          ? "border-[#272B26] bg-[#151815] text-[#F5F3EE] hover:bg-[#1E261E] hover:border-[#00A865] hover:text-[#00A865] hover:shadow-[0_0_16px_rgba(0,168,101,0.35)] hover:brightness-115"
+          : "border-[#D8D5CE] bg-[#FAF9F6] text-[#111111] hover:bg-[#FFFFFF] hover:border-[#005A36] hover:text-[#005A36] hover:shadow-[0_0_14px_rgba(0,90,54,0.2)] hover:brightness-105"
       } ${className}`}
-      data-cursor="THEME"
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}
     >

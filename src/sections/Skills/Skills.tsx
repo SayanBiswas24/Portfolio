@@ -112,7 +112,7 @@ export const Skills: React.FC = () => {
         {toolCategories.map((group) => (
           <div
             key={group.category}
-            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] group"
+            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
           >
             <div>
               {/* Card Header */}

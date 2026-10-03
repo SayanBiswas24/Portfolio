@@ -109,20 +109,19 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
 
           {/* Action Links */}
-          <div className="mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center gap-6">
+          <div className="mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center gap-4">
             {project.live ? (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] hover:text-[#2F7D5B] dark:hover:text-[#34B37D] transition-colors"
-                data-cursor="OPEN"
+                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] hover:text-[#007A4A] dark:hover:text-[#1DE48F] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/15 hover:shadow-[0_0_12px_rgba(0,90,54,0.15)] dark:hover:shadow-[0_0_14px_rgba(0,168,101,0.25)] transition-all duration-200"
               >
                 <span>Live Experience</span>
                 <ExternalLink size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ) : (
-              <span className="font-mono text-xs tracking-wider text-[#5F5F5A]/70 dark:text-[#9E9E98]/70 uppercase">
+              <span className="font-mono text-xs tracking-wider text-[#5F5F5A]/70 dark:text-[#9E9E98]/70 uppercase px-2 py-1">
                 System In Deployment
               </span>
             )}
@@ -132,8 +131,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
-                data-cursor="CODE"
+                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 transition-all duration-200"
               >
                 <GithubIcon size={13} />
                 <span>Source</span>
@@ -159,13 +157,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 : `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(${isHovered ? "-4px" : "0px"})`,
               borderColor: isHovered
                 ? isDark
-                  ? "#F5F3EE"
-                  : "#111111"
+                  ? "#00A865"
+                  : "#005A36"
                 : isDark
                 ? "#272B26"
                 : "#D8D5CE",
+              boxShadow: isHovered
+                ? isDark
+                  ? "0 0 25px rgba(0,168,101,0.18)"
+                  : "0 6px 24px rgba(0,90,54,0.12)"
+                : "none",
             }}
-            data-cursor="VIEW"
           >
             {/* Visual inner container with subtle clip border */}
             <div className="relative overflow-hidden aspect-[16/10] bg-[#E9E4D9]/40 dark:bg-[#1A201A]/60 border border-[#D8D5CE]/60 dark:border-[#272B26]/60">
