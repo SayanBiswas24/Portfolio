@@ -158,16 +158,9 @@ export const Hero: React.FC = () => {
 
         <div
           ref={visualRef}
-          className="lg:col-span-5 relative w-full border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#0E120E] shadow-xs flex flex-col justify-between overflow-hidden"
+          className="lg:col-span-5 relative w-full flex items-center justify-center"
         >
-          <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[13px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
-            <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
-              INTERACTIVE SYSTEM GRAPH
-            </span>
-          </div>
-
-          <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[400px]">
+          <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[460px]">
             <HeroNetwork mouse={mouse} />
           </div>
         </div>
