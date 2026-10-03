@@ -133,9 +133,9 @@ export const Projects: React.FC = () => {
     <section
       ref={sectionRef}
       id="work"
-      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
+      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#2A322A]"
     >
-      <div className="projects-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
+      <div className="projects-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#2A322A]">
         <div>
           <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
@@ -149,12 +149,12 @@ export const Projects: React.FC = () => {
 
       <div className="projects-list-container space-y-12">
         {/* ===================== PROJECT 01: KAUSHAL SAATHI ===================== */}
-        <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
+        <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 01</span>
                 </div>
 
@@ -175,7 +175,7 @@ export const Projects: React.FC = () => {
                   {p1.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
+                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
                     >
                       {t}
                     </span>
@@ -184,8 +184,8 @@ export const Projects: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs transition-colors">
-              <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
+            <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#191D19] flex flex-col justify-between overflow-hidden shadow-xs transition-colors">
+              <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#2A322A] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#191D19]">
                 <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                   <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                   <span>FLUTTER MULTILINGUAL CLIENT</span>
@@ -197,7 +197,7 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* 4 Phone Mockups Showcase */}
-              <div className="p-3 sm:p-4 bg-[#FAF9F6] dark:bg-[#0E120E]">
+              <div className="p-3 sm:p-4 bg-[#FAF9F6] dark:bg-[#191D19]">
                 <div className="flex sm:grid sm:grid-cols-4 gap-2 sm:gap-2.5 overflow-x-auto pb-2 sm:pb-0 snap-x snap-mandatory no-scrollbar">
                   {p1.screenshots?.map((ss, idx) => (
                     <div
@@ -224,7 +224,7 @@ export const Projects: React.FC = () => {
 
                           {/* Hover Overlay Hint */}
                           <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                            <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                            <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#191D19]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                               <Maximize2 size={12} />
                             </span>
                           </div>
@@ -251,10 +251,10 @@ export const Projects: React.FC = () => {
           </div>
         </article>
 
-        <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
+        <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-6 lg:order-1 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs">
-              <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
+            <div className="lg:col-span-6 lg:order-1 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#191D19] flex flex-col justify-between overflow-hidden shadow-xs">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#2A322A] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#191D19]">
                 <span>VOICE & CALL INTELLIGENCE</span>
               </div>
 
@@ -269,7 +269,7 @@ export const Projects: React.FC = () => {
 
             <div className="lg:col-span-6 lg:order-2 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 02</span>
                 </div>
 
@@ -290,7 +290,7 @@ export const Projects: React.FC = () => {
                   {p2.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
+                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
                     >
                       {t}
                     </span>
@@ -304,9 +304,9 @@ export const Projects: React.FC = () => {
         {/* ===================== PROJECTS 03 & 04 (2 COLUMNS SIDE-BY-SIDE) ===================== */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Project 03: Nagar Alert Hub */}
-          <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
+          <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 03</span>
               </div>
 
@@ -323,8 +323,8 @@ export const Projects: React.FC = () => {
                 {p3.description}
               </p>
 
-              <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
-                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+              <div className="my-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#191D19] p-2.5 sm:p-3 overflow-hidden">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                     <span>CIVIC CLIENT</span>
@@ -357,7 +357,7 @@ export const Projects: React.FC = () => {
                           />
 
                           <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                            <span className="p-1 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                            <span className="p-1 rounded-full bg-[#FFFFFF]/90 dark:bg-[#191D19]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                               <Maximize2 size={11} />
                             </span>
                           </div>
@@ -383,7 +383,7 @@ export const Projects: React.FC = () => {
                 {p3.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
+                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE]"
                   >
                     {t}
                   </span>
@@ -392,9 +392,9 @@ export const Projects: React.FC = () => {
             </div>
           </article>
 
-          <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
+          <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 04</span>
               </div>
 
@@ -411,8 +411,8 @@ export const Projects: React.FC = () => {
                 {p4.description}
               </p>
 
-              <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
-                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+              <div className="my-4 border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#191D19] p-2.5 sm:p-3 overflow-hidden">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Gamepad2 size={12} className="text-[#005A36] dark:text-[#00A865]" />
                     <span>2D GAME ENGINE</span>
@@ -447,7 +447,7 @@ export const Projects: React.FC = () => {
                         />
 
                         <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/scene:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                          <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                          <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#191D19]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                             <Maximize2 size={13} />
                           </span>
                         </div>
@@ -461,7 +461,7 @@ export const Projects: React.FC = () => {
                 {p4.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
+                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE]"
                   >
                     {t}
                   </span>
@@ -479,13 +479,13 @@ export const Projects: React.FC = () => {
           onClick={closeModal}
         >
           <div
-            className={`relative w-full max-h-[94vh] flex flex-col items-center bg-[#FFFFFF] dark:bg-[#0E120E] border border-[#D8D5CE] dark:border-[#272B26] p-4 sm:p-6 shadow-2xl rounded-2xl ${
+            className={`relative w-full max-h-[94vh] flex flex-col items-center bg-[#FFFFFF] dark:bg-[#191D19] border border-[#D8D5CE] dark:border-[#2A322A] p-4 sm:p-6 shadow-2xl rounded-2xl ${
               activeModalProject.isLandscape ? "max-w-4xl" : "max-w-lg"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-sm">
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
                   {activeModalProject.screenshots[activeModalProject.index].tag}
@@ -509,7 +509,7 @@ export const Projects: React.FC = () => {
               <button
                 type="button"
                 onClick={prevModalScreenshot}
-                className="absolute left-1 sm:left-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                className="absolute left-1 sm:left-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#232823]/90 border border-[#D8D5CE] dark:border-[#2A322A] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
                 aria-label="Previous screenshot"
               >
                 <ChevronLeft size={20} />
@@ -532,7 +532,7 @@ export const Projects: React.FC = () => {
               <button
                 type="button"
                 onClick={nextModalScreenshot}
-                className="absolute right-1 sm:right-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                className="absolute right-1 sm:right-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#232823]/90 border border-[#D8D5CE] dark:border-[#2A322A] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
                 aria-label="Next screenshot"
               >
                 <ChevronRight size={20} />
@@ -540,7 +540,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Bottom Screen Switcher Dots / Pills */}
-            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
+            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#2A322A]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
               <span>VIEW {activeModalProject.index + 1} OF {activeModalProject.screenshots.length}</span>
               <div className="flex items-center gap-1.5">
                 {activeModalProject.screenshots.map((s, sIdx) => (
@@ -554,7 +554,7 @@ export const Projects: React.FC = () => {
                     className={`h-2 rounded-full transition-all cursor-pointer ${
                       sIdx === activeModalProject.index
                         ? "w-6 bg-[#005A36] dark:bg-[#00A865]"
-                        : "w-2 bg-[#D8D5CE] dark:bg-[#272B26] hover:bg-[#005A36]/50"
+                        : "w-2 bg-[#D8D5CE] dark:bg-[#2A322A] hover:bg-[#005A36]/50"
                     }`}
                     aria-label={`Jump to view ${sIdx + 1}`}
                   />

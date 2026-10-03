@@ -20,7 +20,7 @@ export interface EducationItem {
 export const experiences: ExperienceItem[] = [
   {
     id: "digital-guru",
-    year: "2024",
+    year: "2025",
     role: "Flutter Developer Intern",
     organization: "Digital Guru",
     description:

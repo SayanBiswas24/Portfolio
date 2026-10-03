@@ -51,9 +51,9 @@ export const Credentials: React.FC = () => {
     <section
       ref={sectionRef}
       id="achievements"
-      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
+      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#2A322A]"
     >
-      <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
+      <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#2A322A]">
         <div>
           <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
@@ -70,10 +70,10 @@ export const Credentials: React.FC = () => {
         {credentials.map((item) => (
           <div
             key={item.id}
-            className="credential-editorial-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]"
+            className="credential-editorial-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-8 flex flex-col justify-between transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_24px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_24px_rgba(0,168,101,0.08)]"
           >
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50 mb-5">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50 mb-5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-mono text-[12px] sm:text-[13px] uppercase tracking-wider bg-[#005A36]/10 dark:bg-[#00A865]/15 text-[#005A36] dark:text-[#00A865] border border-[#005A36]/30 dark:border-[#00A865]/30 font-semibold">
                   <Trophy size={13} className="text-[#005A36] dark:text-[#00A865]" />
                   <span>{item.badge || "HACKATHON FINALIST"}</span>
@@ -98,7 +98,7 @@ export const Credentials: React.FC = () => {
               )}
             </div>
 
-            <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
+            <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#2A322A]/60 flex items-center justify-between font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
               <span className="text-[#005A36] dark:text-[#00A865] font-medium">
                 STATUS: VERIFIED
               </span>

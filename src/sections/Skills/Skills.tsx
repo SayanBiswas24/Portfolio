@@ -95,9 +95,9 @@ export const Skills: React.FC = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
+      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#2A322A]"
     >
-      <div className="skills-header-block mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
+      <div className="skills-header-block mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#2A322A]">
         <div>
           <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
@@ -113,14 +113,14 @@ export const Skills: React.FC = () => {
         {toolCategories.map((group) => (
           <div
             key={group.category}
-            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
+            className="tool-column-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
           >
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 mb-5">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 mb-5">
                 <span className="font-mono text-sm text-[#005A36] dark:text-[#00A865] uppercase tracking-widest font-semibold">
                   {group.number} // {group.category}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#212621] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#2A322A] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors" />
               </div>
 
               <ul className="space-y-2.5">

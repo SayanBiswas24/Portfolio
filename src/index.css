@@ -36,18 +36,18 @@
 
 .dark {
   color-scheme: dark;
-  --bg-canvas: #090B09;
-  --bg-card: #111411;
-  --bg-card-subtle: #161916;
+  --bg-canvas: #151815;
+  --bg-card: #1D211D;
+  --bg-card-subtle: #232823;
   --text-primary: #F5F3EE;
   --text-secondary: #9E9E98;
   --text-muted: #707570;
-  --border-color: #212621;
-  --border-light: #181D18;
+  --border-color: #2A322A;
+  --border-light: #202620;
   --accent-color: #00A865;
   --accent-muted: #34B37D;
-  --highlight-color: #171E17;
-  --hud-bg: #0E120E;
+  --highlight-color: #222A22;
+  --hud-bg: #191D19;
 }
 
 html {

@@ -111,7 +111,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
     <article
       ref={cardRef}
       id={`project-${project.id}`}
-      className="project-card border-t border-[#D8D5CE] dark:border-[#272B26] pt-16 pb-20 transition-colors duration-500 hover:border-[#111111] dark:hover:border-[#F5F3EE]"
+      className="project-card border-t border-[#D8D5CE] dark:border-[#2A322A] pt-16 pb-20 transition-colors duration-500 hover:border-[#111111] dark:hover:border-[#F5F3EE]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -124,7 +124,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         >
           <div>
             {/* Project Index & Category */}
-            <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60">
+            <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60">
               <span className="font-mono text-base tracking-widest text-[#005A36] dark:text-[#00A865] font-medium">
                 PROJECT // {project.number}
               </span>
@@ -157,7 +157,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-sm px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#1A201A] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#272B26] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
+                    className="font-mono text-sm px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#2A322A] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
                   >
                     {tech}
                   </span>
@@ -167,7 +167,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           </div>
 
           {/* Action Links */}
-          <div className="mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center gap-4">
+          <div className="mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#2A322A]/60 flex items-center gap-4">
             {project.live ? (
               <a
                 href={project.live}
@@ -208,7 +208,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         >
           <div
             ref={imageContainerRef}
-            className="relative overflow-hidden border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] p-2 sm:p-4 transition-all duration-300"
+            className="relative overflow-hidden border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#1D211D] p-2 sm:p-4 transition-all duration-300"
             style={{
               transform: prefersReducedMotion
                 ? "none"
@@ -218,7 +218,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                   ? "#00A865"
                   : "#005A36"
                 : isDark
-                ? "#272B26"
+                ? "#2A322A"
                 : "#D8D5CE",
               boxShadow: isHovered
                 ? isDark
@@ -230,9 +230,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             {project.screenshots && project.screenshots.length > 0 ? (
               project.screenshots.length === 2 ? (
                 /* Dual-Scene 2D Game Showcase */
-                <div className="relative overflow-hidden bg-[#FAF9F6] dark:bg-[#101410] border border-[#D8D5CE]/60 dark:border-[#272B26]/60 p-3 sm:p-4">
+                <div className="relative overflow-hidden bg-[#FAF9F6] dark:bg-[#191D19] border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-4">
                   {/* Top CAD Studio Bar */}
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                       <Gamepad2 size={13} className="text-[#005A36] dark:text-[#00A865]" />
                       <span>2D GAME ENGINE // 2 LEVEL SCENES</span>
@@ -275,7 +275,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
                           {/* Hover Overlay */}
                           <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/scene:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                            <span className="p-2 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                            <span className="p-2 rounded-full bg-[#FFFFFF]/90 dark:bg-[#191D19]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                               <Maximize2 size={14} />
                             </span>
                           </div>
@@ -286,9 +286,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 </div>
               ) : (
                 /* Multi-Device Smartphone Gallery Showcase (4 screens) */
-                <div className="relative overflow-hidden bg-[#E9E4D9]/20 dark:bg-[#121612]/60 border border-[#D8D5CE]/60 dark:border-[#272B26]/60 p-3 sm:p-5">
+                <div className="relative overflow-hidden bg-[#E9E4D9]/20 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60 p-3 sm:p-5">
                   {/* Top CAD Studio Bar */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                       <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                       <span>FLUTTER MOBILE CLIENT // 4 VIEWS</span>
@@ -326,7 +326,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
                             {/* Hover Overlay */}
                             <div className="absolute inset-0 bg-[#005A36]/15 dark:bg-[#00A865]/20 opacity-0 group-hover/phone:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                              <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#0E120E]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
+                              <span className="p-1.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#191D19]/90 text-[#005A36] dark:text-[#00A865] shadow-xs">
                                 <Maximize2 size={12} />
                               </span>
                             </div>
@@ -352,7 +352,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               )
             ) : (
               /* Single Image Standard Visual Container */
-              <div className="relative overflow-hidden aspect-[16/10] bg-[#E9E4D9]/40 dark:bg-[#1A201A]/60 border border-[#D8D5CE]/60 dark:border-[#272B26]/60">
+              <div className="relative overflow-hidden aspect-[16/10] bg-[#E9E4D9]/40 dark:bg-[#191D19]/60 border border-[#D8D5CE]/60 dark:border-[#2A322A]/60">
                 <img
                   src={project.image}
                   alt={`${project.title} Architectural Visual`}
@@ -384,7 +384,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <div className="bg-[#F5F3EE] dark:bg-[#0E100E] px-4 py-2 border border-[#005A36] dark:border-[#00A865] text-[#005A36] dark:text-[#00A865] font-mono text-sm uppercase tracking-widest flex items-center gap-2 shadow-xs">
+                  <div className="bg-[#F5F3EE] dark:bg-[#151815] px-4 py-2 border border-[#005A36] dark:border-[#00A865] text-[#005A36] dark:text-[#00A865] font-mono text-sm uppercase tracking-widest flex items-center gap-2 shadow-xs">
                     <span>EXPAND VIEW</span>
                     <ArrowUpRight size={13} />
                   </div>
@@ -408,13 +408,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           onClick={closeModal}
         >
           <div
-            className={`relative w-full max-h-[94vh] flex flex-col items-center bg-[#FFFFFF] dark:bg-[#0E120E] border border-[#D8D5CE] dark:border-[#272B26] p-4 sm:p-6 shadow-2xl rounded-2xl ${
+            className={`relative w-full max-h-[94vh] flex flex-col items-center bg-[#FFFFFF] dark:bg-[#191D19] border border-[#D8D5CE] dark:border-[#2A322A] p-4 sm:p-6 shadow-2xl rounded-2xl ${
               project.screenshots.length === 2 ? "max-w-4xl" : "max-w-lg"
             }`}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-sm">
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
                   {project.screenshots[activeModalIndex].tag}
@@ -438,7 +438,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               <button
                 type="button"
                 onClick={prevScreenshot}
-                className="absolute left-1 sm:left-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                className="absolute left-1 sm:left-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#232823]/90 border border-[#D8D5CE] dark:border-[#2A322A] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
                 aria-label="Previous screenshot"
               >
                 <ChevronLeft size={20} />
@@ -461,7 +461,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
               <button
                 type="button"
                 onClick={nextScreenshot}
-                className="absolute right-1 sm:right-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#161D16]/90 border border-[#D8D5CE] dark:border-[#272B26] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
+                className="absolute right-1 sm:right-2 z-10 p-2 sm:p-2.5 rounded-full bg-[#FFFFFF]/90 dark:bg-[#232823]/90 border border-[#D8D5CE] dark:border-[#2A322A] text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] shadow-md transition-all hover:scale-110 cursor-pointer"
                 aria-label="Next screenshot"
               >
                 <ChevronRight size={20} />
@@ -469,7 +469,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             </div>
 
             {/* Bottom Screen Switcher Dots / Pills */}
-            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
+            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#2A322A]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
               <span>SCENE {activeModalIndex + 1} OF {project.screenshots.length}</span>
               <div className="flex items-center gap-1.5">
                 {project.screenshots.map((s, sIdx) => (
@@ -479,7 +479,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     className={`h-2 rounded-full transition-all cursor-pointer ${
                       sIdx === activeModalIndex
                         ? "w-6 bg-[#005A36] dark:bg-[#00A865]"
-                        : "w-2 bg-[#D8D5CE] dark:bg-[#272B26] hover:bg-[#005A36]/50"
+                        : "w-2 bg-[#D8D5CE] dark:bg-[#2A322A] hover:bg-[#005A36]/50"
                     }`}
                     aria-label={`Jump to scene ${sIdx + 1}`}
                   />

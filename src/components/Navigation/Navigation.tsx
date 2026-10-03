@@ -64,8 +64,8 @@ export const Navigation: React.FC = () => {
       id="main-navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#F5F3EE]/95 dark:bg-[#090B09]/95 backdrop-blur-md py-3.5 border-b border-[#D8D5CE] dark:border-[#212621]"
-          : "bg-transparent py-5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60"
+          ? "bg-[#F5F3EE]/95 dark:bg-[#151815]/95 backdrop-blur-md py-3.5 border-b border-[#D8D5CE] dark:border-[#2A322A]"
+          : "bg-transparent py-5 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/60"
       }`}
     >
       <div className="max-w-[1520px] mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -132,14 +132,14 @@ export const Navigation: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#F5F3EE] dark:bg-[#090B09] border-b border-[#D8D5CE] dark:border-[#212621] px-6 py-6 shadow-md transition-all">
+        <div className="lg:hidden bg-[#F5F3EE] dark:bg-[#151815] border-b border-[#D8D5CE] dark:border-[#2A322A] px-6 py-6 shadow-md transition-all">
           <div className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="font-mono text-sm tracking-wider py-2 border-b border-[#D8D5CE]/40 dark:border-[#212621]/60 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
+                className="font-mono text-sm tracking-wider py-2 border-b border-[#D8D5CE]/40 dark:border-[#2A322A]/60 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
               >
                 <span>
                   <span className="text-[#005A36] dark:text-[#00A865] mr-2">

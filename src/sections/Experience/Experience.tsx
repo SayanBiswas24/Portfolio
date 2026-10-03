@@ -51,9 +51,9 @@ export const Experience: React.FC = () => {
     <section
       ref={sectionRef}
       id="experience"
-      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
+      className="py-24 sm:py-28 px-4 sm:px-6 max-w-[1520px] mx-auto w-full border-t border-[#D8D5CE] dark:border-[#2A322A]"
     >
-      <div className="experience-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
+      <div className="experience-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#2A322A]">
         <div>
           <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
@@ -67,7 +67,7 @@ export const Experience: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
         <div className="lg:col-span-7 space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-sm text-[#111111] dark:text-[#F5F3EE] uppercase tracking-widest font-semibold">
+          <div className="flex items-center gap-2 pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-sm text-[#111111] dark:text-[#F5F3EE] uppercase tracking-widest font-semibold">
             <Briefcase size={14} className="text-[#005A36] dark:text-[#00A865]" />
             <span>PROFESSIONAL EXPERIENCE</span>
           </div>
@@ -76,9 +76,9 @@ export const Experience: React.FC = () => {
             {experiences.map((item, idx) => (
               <div
                 key={item.id}
-                className="trajectory-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
+                className="trajectory-card border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
               >
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50">
                   <span className="font-serif text-xl sm:text-2xl text-[#111111] dark:text-[#F5F3EE] font-normal">
                     {item.role}
                   </span>
@@ -96,11 +96,11 @@ export const Experience: React.FC = () => {
                 </p>
 
                 {item.technologies && (
-                  <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-[#D8D5CE]/40 dark:border-[#212621]/50">
+                  <div className="flex flex-wrap gap-2 mt-4 pt-3 border-t border-[#D8D5CE]/40 dark:border-[#2A322A]/50">
                     {item.technologies.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
+                        className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FAF9F6] dark:bg-[#232823] text-[#111111] dark:text-[#F5F3EE]"
                       >
                         {t}
                       </span>
@@ -114,7 +114,7 @@ export const Experience: React.FC = () => {
 
         {/* Right 5 Columns: Academic Foundation */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="flex items-center gap-2 pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-sm text-[#111111] dark:text-[#F5F3EE] uppercase tracking-widest font-semibold">
+          <div className="flex items-center gap-2 pb-3 border-b border-[#D8D5CE]/60 dark:border-[#2A322A]/60 font-mono text-sm text-[#111111] dark:text-[#F5F3EE] uppercase tracking-widest font-semibold">
             <GraduationCap size={15} className="text-[#005A36] dark:text-[#00A865]" />
             <span>ACADEMIC FOUNDATION</span>
           </div>
@@ -123,9 +123,9 @@ export const Experience: React.FC = () => {
             {education.map((edu) => (
               <div
                 key={edu.id}
-                className="border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
+                className="border border-[#D8D5CE] dark:border-[#2A322A] bg-[#FFFFFF] dark:bg-[#1D211D] p-6 sm:p-7 transition-all duration-200 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#232823] hover:shadow-[0_4px_20px_rgba(0,0,0,0.05)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)]"
               >
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#2A322A]/50">
                   <span className="font-serif text-xl text-[#111111] dark:text-[#F5F3EE] font-normal">
                     {edu.degree}
                   </span>

@@ -166,7 +166,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[13px] sm:text-[14px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#2A322A] font-mono text-[13px] sm:text-[14px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
         <div className="text-left">
           AVAILABLE FOR NEW ROLES
         </div>

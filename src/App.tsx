@@ -13,17 +13,17 @@ import { ThemeProvider } from "@/context/ThemeContext";
 export function App() {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#090B09]">
+      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#151815]">
         {/* Subtle architectural vertical grid columns matching reference screenshot */}
         <div
-          className="fixed inset-0 max-w-[1520px] mx-auto px-3 sm:px-6 pointer-events-none z-0 grid grid-cols-4 md:grid-cols-6 border-x border-[#D8D5CE]/30 dark:border-[#212621]/40"
+          className="fixed inset-0 max-w-[1520px] mx-auto px-3 sm:px-6 pointer-events-none z-0 grid grid-cols-4 md:grid-cols-6 border-x border-[#D8D5CE]/30 dark:border-[#2A322A]/40"
           aria-hidden="true"
         >
-          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
-          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
-          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full hidden md:block" />
-          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full hidden md:block" />
-          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#2A322A]/30 h-full" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#2A322A]/30 h-full" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#2A322A]/30 h-full hidden md:block" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#2A322A]/30 h-full hidden md:block" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#2A322A]/30 h-full" />
         </div>
 
         {/* Interactive custom cursor for desktop */}

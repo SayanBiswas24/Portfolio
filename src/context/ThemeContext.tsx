@@ -32,7 +32,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Update theme-color meta tag
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", t === "dark" ? "#0F110F" : "#F5F3EE");
+      metaThemeColor.setAttribute("content", t === "dark" ? "#151815" : "#F5F3EE");
     }
 
     localStorage.setItem("portfolio-theme", t);
