@@ -4,17 +4,18 @@ import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { Menu, X } from "lucide-react";
 
 interface NavItem {
+  number: string;
   label: string;
   href: string;
 }
 
 const navItems: NavItem[] = [
-  { label: "WORK", href: "#work" },
-  { label: "ABOUT", href: "#about" },
-  { label: "SKILLS", href: "#skills" },
-  { label: "PROCESS", href: "#process" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "CONTACT", href: "#contact" },
+  { number: "01", label: "ABOUT", href: "#about" },
+  { number: "02", label: "SKILLS", href: "#skills" },
+  { number: "03", label: "WORK", href: "#work" },
+  { number: "04", label: "EXPERIENCE", href: "#experience" },
+  { number: "05", label: "CREDENTIALS", href: "#credentials" },
+  { number: "06", label: "CONTACT", href: "#contact" },
 ];
 
 export const Navigation: React.FC = () => {
@@ -24,20 +25,15 @@ export const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 40);
 
-      // Check current section
       const sections = navItems.map((item) => item.href.substring(1));
       let current = "";
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 200 && rect.bottom >= 200) {
+          if (rect.top <= 250 && rect.bottom >= 250) {
             current = sectionId;
             break;
           }
@@ -68,8 +64,8 @@ export const Navigation: React.FC = () => {
       id="main-navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#F5F3EE]/92 dark:bg-[#0E100E]/92 backdrop-blur-xs py-3 border-b border-[#D8D5CE] dark:border-[#272B26]"
-          : "bg-transparent py-6 border-b border-[#D8D5CE]/40 dark:border-[#272B26]/40"
+          ? "bg-[#F5F3EE]/95 dark:bg-[#090B09]/95 backdrop-blur-md py-3.5 border-b border-[#D8D5CE] dark:border-[#212621]"
+          : "bg-transparent py-5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -77,55 +73,60 @@ export const Navigation: React.FC = () => {
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, "#hero")}
-          className="group flex items-center gap-3 text-left focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
+          className="group flex items-center gap-2.5 text-left focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
           aria-label="Sayan Biswas Home"
         >
-          <span className="font-mono text-sm tracking-widest font-semibold uppercase text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors duration-200">
+          <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse" />
+          <span className="font-mono text-xs tracking-widest font-semibold uppercase text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors duration-200">
             {personalInfo.name.toUpperCase()}
-          </span>
-          <span className="hidden sm:inline-block font-mono text-[10px] tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] border-l border-[#D8D5CE] dark:border-[#272B26] pl-3">
-            DEV / ARCHITECTURE
           </span>
         </a>
 
-        {/* Right side controls (Desktop links + ThemeToggle) */}
-        <div className="flex items-center space-x-6 md:space-x-8">
-          {/* Desktop Nav Links */}
-          <nav
-            className="hidden md:flex items-center space-x-8"
-            aria-label="Primary navigation"
-          >
-            {navItems.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
-              return (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className={`font-mono text-xs tracking-wider transition-colors duration-200 py-1 relative ${
-                    isActive
-                      ? "text-[#005A36] dark:text-[#00A865] font-medium"
-                      : "text-[#5F5F5A] dark:text-[#9E9E98] hover:text-[#111111] dark:hover:text-[#F5F3EE]"
-                  }`}
-                >
-                  {item.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#005A36] dark:bg-[#00A865]" />
-                  )}
-                </a>
-              );
-            })}
-          </nav>
+        {/* Center Desktop Nav Links */}
+        <nav
+          className="hidden lg:flex items-center space-x-6"
+          aria-label="Primary navigation"
+        >
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.substring(1);
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={`font-mono text-[11px] tracking-wider transition-colors duration-200 py-1 flex items-center gap-1 ${
+                  isActive
+                    ? "text-[#005A36] dark:text-[#00A865] font-semibold"
+                    : "text-[#5F5F5A] dark:text-[#9E9E98] hover:text-[#111111] dark:hover:text-[#F5F3EE]"
+                }`}
+              >
+                <span className="text-[10px] opacity-60">{item.number}.</span>
+                <span>{item.label}</span>
+              </a>
+            );
+          })}
+        </nav>
 
-          {/* Theme Toggle Button in Top Right Corner */}
+        {/* Right Side: Available for Work Pill + Theme Toggle */}
+        <div className="flex items-center space-x-3 sm:space-x-4">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, "#contact")}
+            className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#005A36]/40 dark:border-[#00A865]/40 bg-[#005A36]/5 dark:bg-[#00A865]/10 text-[#005A36] dark:text-[#00A865] font-mono text-[10px] tracking-wider uppercase font-semibold hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/20 transition-colors"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-ping" />
+            <span>AVAILABLE FOR WORK</span>
+          </a>
+
+          {/* Theme Switcher */}
           <ThemeToggle />
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Hamburger */}
+          <div className="lg:hidden flex items-center">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
+              className="p-1.5 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865]"
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle navigation menu"
             >
@@ -135,25 +136,28 @@ export const Navigation: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer / Dropdown */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#F5F3EE] dark:bg-[#0E100E] border-b border-[#D8D5CE] dark:border-[#272B26] px-6 py-6 transition-all shadow-xs">
-          <div className="flex flex-col space-y-4">
+        <div className="lg:hidden bg-[#F5F3EE] dark:bg-[#090B09] border-b border-[#D8D5CE] dark:border-[#212621] px-6 py-6 shadow-md transition-all">
+          <div className="flex flex-col space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="font-mono text-sm tracking-wider py-2 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/50 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
+                className="font-mono text-xs tracking-wider py-2 border-b border-[#D8D5CE]/40 dark:border-[#212621]/60 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
               >
-                <span>{item.label}</span>
-                <span className="text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">↗</span>
+                <span>
+                  <span className="text-[#005A36] dark:text-[#00A865] mr-2">
+                    {item.number}.
+                  </span>
+                  {item.label}
+                </span>
+                <span className="text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
+                  ↗
+                </span>
               </a>
             ))}
-            <div className="pt-2 flex items-center justify-between font-mono text-xs text-[#5F5F5A] dark:text-[#9E9E98]">
-              <span>APPEARANCE</span>
-              <ThemeToggle showLabel={true} />
-            </div>
           </div>
         </div>
       )}

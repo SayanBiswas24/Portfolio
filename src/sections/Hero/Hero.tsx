@@ -19,7 +19,6 @@ export const Hero: React.FC = () => {
     if (prefersReducedMotion) return;
 
     const ctx = gsap.context(() => {
-      // 1. Entrance animation
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.fromTo(
@@ -29,15 +28,15 @@ export const Hero: React.FC = () => {
       )
         .fromTo(
           ".hero-heading-line",
-          { y: 60, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1.0, stagger: 0.15 },
-          "-=0.4"
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.9, stagger: 0.12 },
+          "-=0.3"
         )
         .fromTo(
           ".hero-description",
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.7 },
-          "-=0.5"
+          "-=0.4"
         )
         .fromTo(
           ".hero-cta",
@@ -47,12 +46,11 @@ export const Hero: React.FC = () => {
         )
         .fromTo(
           visualRef.current,
-          { scale: 0.88, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 1.2 },
-          "-=0.8"
+          { scale: 0.92, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 1.1 },
+          "-=0.7"
         );
 
-      // 2. Hero exit scroll animation
       if (containerRef.current && contentRef.current && visualRef.current) {
         ScrollTrigger.create({
           trigger: containerRef.current,
@@ -62,12 +60,11 @@ export const Hero: React.FC = () => {
           onUpdate: (self) => {
             const p = self.progress;
             gsap.set(contentRef.current, {
-              y: -p * 60,
+              y: -p * 50,
               opacity: 1 - p * 0.75,
             });
             gsap.set(visualRef.current, {
-              y: -p * 50,
-              rotationZ: p * 12,
+              y: -p * 40,
               opacity: 1 - p * 0.6,
             });
           },
@@ -78,6 +75,11 @@ export const Hero: React.FC = () => {
     return () => ctx.revert();
   }, [prefersReducedMotion]);
 
+  const scrollToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   const scrollToWork = () => {
     const el = document.getElementById("work");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -87,98 +89,111 @@ export const Hero: React.FC = () => {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 pb-12 px-6 md:px-12 max-w-7xl mx-auto w-full overflow-hidden"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col justify-between pt-28 pb-10 px-6 md:px-12 max-w-7xl mx-auto w-full"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center my-auto">
-        {/* Left Typography Column: 55-60% */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center my-auto py-8">
+        {/* Left Column: Typography */}
         <div ref={contentRef} className="lg:col-span-7 flex flex-col z-10">
-          {/* Header Metadata */}
-          <div className="hero-meta flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-[#005A36] dark:text-[#00A865] mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse" />
-            <span className="font-semibold">{personalInfo.name.toUpperCase()}</span>
-            <span className="text-[#D8D5CE] dark:text-[#272B26]">/</span>
-            <span className="text-[#5F5F5A] dark:text-[#9E9E98]">{personalInfo.role.toUpperCase()}</span>
+          {/* Metadata pill badge */}
+          <div className="hero-meta inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mb-5">
+            <span className="w-1.5 h-1.5 bg-[#005A36] dark:bg-[#00A865] rounded-xs" />
+            <span className="font-semibold">
+              01. INTRO // PERSONAL PORTFOLIO // 2026 EDITION
+            </span>
           </div>
 
-          {/* Main Editorial Heading */}
+          {/* Heading with editorial serif and italic middle line */}
           <h1
             ref={headingRef}
-            className="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.08] my-4"
+            className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.08] mb-6"
           >
-            <span className="hero-heading-line block overflow-hidden">
-              I BUILD SOFTWARE
+            <span className="hero-heading-line block">
+              I build software
             </span>
-            <span className="hero-heading-line block overflow-hidden text-[#005A36] dark:text-[#00A865]">
-              THAT SOLVES
+            <span className="hero-heading-line block italic font-normal text-[#005A36] dark:text-[#00A865]">
+              that solves
             </span>
-            <span className="hero-heading-line block overflow-hidden">
-              REAL PROBLEMS.
+            <span className="hero-heading-line block">
+              real problems.
             </span>
           </h1>
 
-          {/* Description */}
-          <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mt-4 mb-8">
-            {personalInfo.shortBio}
+          {/* Refined Description */}
+          <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mb-9">
+            Flutter and Full-Stack developer focused on building durable, scalable systems and intuitive digital products. Bringing analytical rigor and craftsmanship to every product build.
           </p>
 
-          {/* Call to Actions */}
-          <div className="hero-cta flex flex-wrap items-center gap-4">
+          {/* Buttons: Pill styling matching screenshot */}
+          <div className="hero-cta flex flex-wrap items-center gap-3.5">
             <Button
               variant="primary"
-              onClick={scrollToWork}
-              showArrow={false}
-              id="hero-view-work-btn"
+              onClick={scrollToContact}
+              showArrow={true}
+              arrowDirection="right"
+              id="hero-get-in-touch-btn"
             >
-              VIEW MY WORK
+              GET IN TOUCH
             </Button>
+
             <Button
               variant="secondary"
               href={personalInfo.github}
               target="_blank"
               showArrow={true}
+              arrowDirection="up-right"
               id="hero-github-btn"
             >
               GITHUB
             </Button>
           </div>
-
-          {/* Technical Status Pill */}
-          <div className="hero-meta mt-10 pt-6 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 flex items-center gap-4 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
-            <span className="inline-flex items-center gap-1.5 text-[#005A36] dark:text-[#00A865]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
-              AVAILABILITY: OPEN
-            </span>
-            <span className="text-[#D8D5CE] dark:text-[#272B26]">•</span>
-            <span>STACK: FLUTTER / NODE / TYPESCRIPT</span>
-          </div>
         </div>
 
-        {/* Right 3D Object Column: 40-45% */}
+        {/* Right Column: 3D CAD/HUD Frame */}
         <div
           ref={visualRef}
-          className="lg:col-span-5 flex items-center justify-center relative w-full h-[320px] sm:h-[400px] lg:h-[500px]"
+          className="lg:col-span-5 relative w-full border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#0E120E] shadow-xs flex flex-col justify-between overflow-hidden"
         >
-          {/* Subtle background guide box */}
-          <div className="absolute inset-2 border border-[#D8D5CE]/40 dark:border-[#272B26]/60 pointer-events-none rounded-xs hidden sm:block" />
-          <div className="absolute top-4 left-4 font-mono text-[9px] text-[#5F5F5A]/50 dark:text-[#9E9E98]/50 uppercase tracking-widest pointer-events-none">
-            3D.NODE.NETWORK // v1.0
+          {/* Top HUD Bar */}
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
+            <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
+              SYS_GRAPH // VIEW_01
+            </span>
+            <span className="text-[#005A36] dark:text-[#00A865]">
+              LATENCY: 12ms // STATUS: OK
+            </span>
           </div>
-          <HeroNetwork mouse={mouse} />
+
+          {/* Central 3D Canvas Container */}
+          <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[400px]">
+            <HeroNetwork mouse={mouse} />
+          </div>
+
+          {/* Bottom HUD Bar */}
+          <div className="flex items-center justify-between px-4 py-2 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
+            <span>NODES: 09 / ACTIVE: 09</span>
+            <span className="text-[#005A36] dark:text-[#00A865]">INTERACTIVE // 3D</span>
+          </div>
         </div>
       </div>
 
-      {/* Bottom Scroll Indicator */}
-      <div className="flex items-center justify-between pt-8 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
-        <span className="hidden sm:inline">COORDINATES: LAT 22.57° N / LON 88.36° E</span>
-        <button
-          onClick={scrollToWork}
-          className="flex items-center gap-2 hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors mx-auto sm:mx-0 group cursor-pointer"
-          aria-label="Scroll down to explore work"
-        >
-          <span>SCROLL TO EXPLORE</span>
-          <ArrowDown size={12} className="transition-transform group-hover:translate-y-1" />
-        </button>
-        <span className="hidden sm:inline">INDEX // 2026 ARCHIVE</span>
+      {/* Hero Bottom Ticker Bar */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
+        <div className="text-left">
+          COORDINATES: 22°34' N 88°21' E
+        </div>
+        <div className="text-center">
+          <button
+            onClick={scrollToWork}
+            className="inline-flex items-center gap-1.5 hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors cursor-pointer"
+          >
+            <span>SCROLL TO EXPLORE</span>
+            <ArrowDown size={11} />
+          </button>
+        </div>
+        <div className="text-right text-[#005A36] dark:text-[#00A865] font-medium">
+          STATUS: OPEN FOR NEW WORK
+        </div>
       </div>
     </section>
   );

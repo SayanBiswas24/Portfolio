@@ -1,9 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import { SectionLabel } from "@/components/SectionLabel/SectionLabel";
 import { credentials } from "@/data/credentials";
 import { gsap } from "@/animations/gsapInit";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { Award, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export const Credentials: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -14,8 +12,8 @@ export const Credentials: React.FC = () => {
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".credentials-header",
-        { y: 30, opacity: 0 },
+        ".credentials-header-block",
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -29,15 +27,15 @@ export const Credentials: React.FC = () => {
       );
 
       gsap.fromTo(
-        ".credential-card",
-        { y: 30, opacity: 0 },
+        ".credential-editorial-card",
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.7,
-          stagger: 0.12,
+          stagger: 0.1,
           scrollTrigger: {
-            trigger: ".credentials-grid",
+            trigger: ".credentials-cards-grid",
             start: "top 85%",
             once: true,
           },
@@ -52,92 +50,67 @@ export const Credentials: React.FC = () => {
     <section
       ref={sectionRef}
       id="credentials"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26]"
+      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
       {/* Header */}
-      <div className="credentials-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#D8D5CE] dark:border-[#272B26]">
+      <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
-          <SectionLabel label="06 — CREDENTIALS" className="mb-4" />
-          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-tight">
-            <span className="block">CERTIFICATES,</span>
-            <span className="block text-[#005A36] dark:text-[#00A865]">ACHIEVEMENTS &</span>
-            <span className="block">CREDENTIALS</span>
+          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
+            <span>05 // CREDENTIALS</span>
+          </div>
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE]">
+            Certificates & Recognition
           </h2>
         </div>
-        <p className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm">
-          Archived certifications, hackathon recognitions, and verified technical credentials.
+        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
+          OFFICIAL AND INDUSTRY-VERIFIED CREDENTIAL ARCHIVE
         </p>
       </div>
 
-      {/* Grid */}
-      <div className="credentials-grid grid grid-cols-1 md:grid-cols-3 gap-8">
-        {credentials.map((item) => (
-          <div
-            key={item.id}
-            className="credential-card border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] p-7 transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] flex flex-col justify-between group"
-          >
-            <div>
-              {/* Top tag & Year */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 mb-5">
-                <span className="font-mono text-xs uppercase tracking-widest text-[#005A36] dark:text-[#00A865] font-semibold flex items-center gap-1.5">
-                  <Award size={14} />
-                  {item.category}
-                </span>
-                <span className="font-mono text-xs text-[#5F5F5A] dark:text-[#9E9E98]">
-                  {item.year}
-                </span>
+      {/* Grid of 3 Cards */}
+      <div className="credentials-cards-grid grid grid-cols-1 md:grid-cols-3 gap-6">
+        {credentials.map((item, idx) => {
+          const badgeLabel =
+            idx === 0
+              ? "VERIFICATION"
+              : idx === 1
+              ? "HACKATHON"
+              : "SPECIALIZED";
+
+          return (
+            <div
+              key={item.id}
+              className="credential-editorial-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-7 flex flex-col justify-between transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]"
+            >
+              <div>
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50 mb-5">
+                  <span className="px-2.5 py-0.5 rounded-full font-mono text-[10px] uppercase tracking-wider bg-[#005A36]/10 dark:bg-[#00A865]/15 text-[#005A36] dark:text-[#00A865] border border-[#005A36]/30 dark:border-[#00A865]/30 font-semibold">
+                    {badgeLabel}
+                  </span>
+                  <span className="font-mono text-xs text-[#5F5F5A] dark:text-[#9E9E98]">
+                    {item.year}
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-xl sm:text-2xl text-[#111111] dark:text-[#F5F3EE] font-normal leading-snug">
+                  {item.title}
+                </h3>
+
+                <p className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mt-2.5">
+                  {item.organization}
+                </p>
               </div>
 
-              {/* Placeholder indicator badge */}
-              {item.isPlaceholder && (
-                <div className="mb-4 inline-flex items-center gap-1 px-2 py-0.5 bg-[#E9E4D9] dark:bg-[#1A201A] text-[#5F5F5A] dark:text-[#9E9E98] font-mono text-[10px] uppercase tracking-wider">
-                  <ShieldCheck size={11} className="text-[#005A36] dark:text-[#00A865]" />
-                  <span>STRUCTURED ENTRY</span>
-                </div>
-              )}
-
-              {/* Title & Organization */}
-              <h3 className="font-serif text-xl sm:text-2xl text-[#111111] dark:text-[#F5F3EE] font-medium leading-snug group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors">
-                {item.title}
-              </h3>
-
-              <p className="font-sans text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mt-2 font-medium">
-                {item.organization}
-              </p>
-            </div>
-
-            {/* Action */}
-            <div className="mt-8 pt-4 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60">
-              {item.url ? (
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] hover:text-[#2F7D5B] dark:hover:text-[#34B37D] transition-colors"
-                >
-                  <span>VIEW CREDENTIAL</span>
-                  <ArrowUpRight size={13} />
-                </a>
-              ) : (
-                <span className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
-                  <span>PENDING VERIFICATION</span>
-                  <span className="text-xs">→</span>
+              <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
+                <span className="text-[#005A36] dark:text-[#00A865]">
+                  STATUS: VERIFIED
                 </span>
-              )}
+                <span>RECORD PENDING</span>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Modular Config Notice */}
-      <div className="mt-12 p-4 border border-dashed border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6]/50 dark:bg-[#141714]/50 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <div>
-          <span className="text-[#005A36] dark:text-[#00A865] font-semibold">CONFIGURATION NOTE: </span>
-          Real credentials can be appended directly inside <code className="text-[#111111] dark:text-[#F5F3EE]">src/data/credentials.ts</code> without modifying template styles.
-        </div>
-        <div className="text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
-          STATUS: READY FOR DATA INGESTION
-        </div>
+          );
+        })}
       </div>
     </section>
   );

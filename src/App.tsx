@@ -3,7 +3,6 @@ import { Hero } from "@/sections/Hero/Hero";
 import { About } from "@/sections/About/About";
 import { Skills } from "@/sections/Skills/Skills";
 import { Projects } from "@/sections/Projects/Projects";
-import { Process } from "@/sections/Process/Process";
 import { Experience } from "@/sections/Experience/Experience";
 import { Credentials } from "@/sections/Credentials/Credentials";
 import { Contact } from "@/sections/Contact/Contact";
@@ -14,37 +13,46 @@ import { ThemeProvider } from "@/context/ThemeContext";
 export function App() {
   return (
     <ThemeProvider>
-      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#0E100E]">
+      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300 overflow-x-hidden selection:bg-[#005A36] dark:selection:bg-[#00A865] selection:text-[#F5F3EE] dark:selection:text-[#090B09]">
+        {/* Subtle architectural vertical grid columns matching reference screenshot */}
+        <div
+          className="fixed inset-0 max-w-7xl mx-auto px-6 md:px-12 pointer-events-none z-0 grid grid-cols-4 md:grid-cols-6 border-x border-[#D8D5CE]/30 dark:border-[#212621]/40"
+          aria-hidden="true"
+        >
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full hidden md:block" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full hidden md:block" />
+          <div className="border-r border-[#D8D5CE]/20 dark:border-[#212621]/30 h-full" />
+        </div>
+
         {/* Interactive custom cursor for desktop */}
         <CustomCursor />
 
-        {/* Fixed editorial navigation with theme switch */}
+        {/* Fixed editorial navigation */}
         <Navigation />
 
-        {/* Main Single Page Content */}
+        {/* Main Single Page Content without Process section */}
         <main id="main-content" className="relative z-10 w-full">
-          {/* Hero with 3D Systems Network */}
+          {/* Hero */}
           <Hero />
 
-          {/* 01 — About */}
+          {/* 01 // About */}
           <About />
 
-          {/* 02 — Technologies */}
+          {/* 02 // Technologies */}
           <Skills />
 
-          {/* 03 — Selected Work */}
+          {/* 03 // Selected Work */}
           <Projects />
 
-          {/* 04 — Process with Scroll-Linked 3D Pipeline */}
-          <Process />
-
-          {/* 05 — Experience & Education */}
+          {/* 04 // Timeline & Background */}
           <Experience />
 
-          {/* 06 — Credentials */}
+          {/* 05 // Credentials */}
           <Credentials />
 
-          {/* 07 — Contact */}
+          {/* 06 // Contact */}
           <Contact />
         </main>
 

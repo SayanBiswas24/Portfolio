@@ -21,27 +21,33 @@
 :root {
   color-scheme: light;
   --bg-canvas: #F5F3EE;
-  --bg-card: #FAF9F6;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F9F8F5;
   --text-primary: #111111;
   --text-secondary: #5F5F5A;
+  --text-muted: #7E7E78;
   --border-color: #D8D5CE;
   --border-light: #E7E4DC;
   --accent-color: #005A36;
   --accent-muted: #2F7D5B;
   --highlight-color: #E9E4D9;
+  --hud-bg: #FFFFFF;
 }
 
 .dark {
   color-scheme: dark;
-  --bg-canvas: #0E100E;
-  --bg-card: #151815;
+  --bg-canvas: #090B09;
+  --bg-card: #111411;
+  --bg-card-subtle: #161916;
   --text-primary: #F5F3EE;
   --text-secondary: #9E9E98;
-  --border-color: #272B26;
-  --border-light: #1D211D;
+  --text-muted: #707570;
+  --border-color: #212621;
+  --border-light: #181D18;
   --accent-color: #00A865;
   --accent-muted: #34B37D;
-  --highlight-color: #1A201A;
+  --highlight-color: #171E17;
+  --hud-bg: #0E120E;
 }
 
 html {
@@ -72,6 +78,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-canvas);
   color: var(--text-primary);
+  position: relative;
 }
 
 /* Custom scrollbar */

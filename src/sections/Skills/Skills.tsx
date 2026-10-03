@@ -1,9 +1,46 @@
 import React, { useRef, useEffect } from "react";
-import { SectionLabel } from "@/components/SectionLabel/SectionLabel";
-import { skillCategories } from "@/data/skills";
 import { gsap } from "@/animations/gsapInit";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { ArrowUpRight } from "lucide-react";
+
+interface ToolCategory {
+  number: string;
+  category: string;
+  items: string[];
+  footer: string;
+}
+
+const toolCategories: ToolCategory[] = [
+  {
+    number: "01",
+    category: "MOBILE",
+    items: ["Flutter", "Dart"],
+    footer: "PRIMARY FRAMEWORK",
+  },
+  {
+    number: "02",
+    category: "FRONTEND",
+    items: ["React", "TypeScript", "JavaScript", "HTML / CSS", "Tailwind CSS"],
+    footer: "DESIGN SYSTEMS & SPAs",
+  },
+  {
+    number: "03",
+    category: "BACKEND",
+    items: ["Node.js", "Express", "NestJS", "REST APIs"],
+    footer: "MICROSERVICES & APIS",
+  },
+  {
+    number: "04",
+    category: "DATABASES",
+    items: ["MongoDB", "PostgreSQL", "Firebase", "Supabase"],
+    footer: "SCHEMAS & DATA STORES",
+  },
+  {
+    number: "05",
+    category: "TOOLS",
+    items: ["Git / GitHub", "Docker", "Linux", "VS Code"],
+    footer: "ENVIRONMENT & TOOLING",
+  },
+];
 
 export const Skills: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -14,8 +51,8 @@ export const Skills: React.FC = () => {
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".skills-header",
-        { y: 30, opacity: 0 },
+        ".skills-header-block",
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -29,15 +66,15 @@ export const Skills: React.FC = () => {
       );
 
       gsap.fromTo(
-        ".skill-group",
-        { y: 35, opacity: 0 },
+        ".tool-column-card",
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.7,
-          stagger: 0.12,
+          stagger: 0.1,
           scrollTrigger: {
-            trigger: ".skills-grid",
+            trigger: ".tools-columns-grid",
             start: "top 85%",
             once: true,
           },
@@ -52,73 +89,59 @@ export const Skills: React.FC = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26]"
+      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
-      {/* Header */}
-      <div className="skills-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#D8D5CE] dark:border-[#272B26]">
+      {/* Top Header */}
+      <div className="skills-header-block mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
-          <SectionLabel label="02 — TECHNOLOGIES" className="mb-4" />
-          <h2 className="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE]">
-            TOOLS I WORK WITH
+          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
+            <span>02 // SKILLS</span>
+          </div>
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE]">
+            Tools I Work With
           </h2>
         </div>
-        <p className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-xs">
-          Modular stack selected for type safety, performance, and real-world scalability.
+        <p className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] max-w-sm text-left md:text-right">
+          MODULAR STACK SELECTED FOR TYPE-SAFETY, RESILIENCE & TECHNICAL PERFORMANCE
         </p>
       </div>
 
-      {/* Editorial Grid */}
-      <div className="skills-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {skillCategories.map((group) => (
+      {/* 5 Column Cards Grid matching screenshot */}
+      <div className="tools-columns-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {toolCategories.map((group) => (
           <div
             key={group.category}
-            className="skill-group border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] p-7 transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] flex flex-col justify-between"
+            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] group"
           >
             <div>
-              {/* Category Header */}
-              <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 mb-6">
+              {/* Card Header */}
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 mb-5">
                 <span className="font-mono text-xs text-[#005A36] dark:text-[#00A865] uppercase tracking-widest font-semibold">
-                  {group.code}
+                  {group.number} // {group.category}
                 </span>
-                <span className="font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
-                  {group.category}
-                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#212621] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors" />
               </div>
 
-              {/* Skills Item List with Hover Micro-Interactions */}
-              <ul className="space-y-3">
-                {group.skills.map((skill) => (
+              {/* Items List */}
+              <ul className="space-y-2.5">
+                {group.items.map((item) => (
                   <li
-                    key={skill.name}
-                    className="group relative flex items-center justify-between py-2 border-b border-[#D8D5CE]/30 dark:border-[#272B26]/50 hover:border-[#005A36]/60 dark:hover:border-[#00A865]/60 cursor-default transition-all duration-200"
-                    data-cursor="TOOL"
+                    key={item}
+                    className="font-sans text-sm text-[#111111] dark:text-[#F5F3EE] flex items-center gap-2 group/item transition-colors"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#272B26] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors duration-200" />
-                      <span className="font-sans text-base text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] group-hover:translate-x-1.5 transition-all duration-200 font-medium">
-                        {skill.name}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-1.5">
-                      {skill.focus && (
-                        <span className="font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:inline">
-                          {skill.focus}
-                        </span>
-                      )}
-                      <ArrowUpRight
-                        size={12}
-                        className="text-[#005A36] dark:text-[#00A865] opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-200"
-                      />
-                    </div>
+                    <span className="w-1 h-1 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
+                    <span className="group-hover/item:text-[#005A36] dark:group-hover/item:text-[#00A865] transition-colors">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Description note */}
-            <div className="mt-6 pt-4 border-t border-[#D8D5CE]/40 dark:border-[#272B26]/40 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98]">
-              {group.description}
+            {/* Bottom Descriptor */}
+            <div className="mt-8 pt-3 border-t border-[#D8D5CE]/40 dark:border-[#212621]/60 font-mono text-[9px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
+              {group.footer}
             </div>
           </div>
         ))}

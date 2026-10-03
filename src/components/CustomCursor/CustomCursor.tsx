@@ -6,7 +6,13 @@ export const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
   const cursorTextRef = useRef<HTMLSpanElement>(null);
   const prefersReducedMotion = useReducedMotion();
-  const { isDark } = useTheme();
+  let isDark = false;
+  try {
+    const themeContext = useTheme();
+    isDark = themeContext.isDark;
+  } catch {
+    // safe fallback
+  }
 
   const [cursorText, setCursorText] = useState("");
   const [isHovering, setIsHovering] = useState(false);

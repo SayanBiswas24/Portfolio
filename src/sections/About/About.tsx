@@ -1,12 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import { SectionLabel } from "@/components/SectionLabel/SectionLabel";
 import { gsap } from "@/animations/gsapInit";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { Terminal, Cpu, Layers } from "lucide-react";
 
 export const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
   const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -23,26 +20,26 @@ export const About: React.FC = () => {
       });
 
       tl.fromTo(
-        ".about-label",
+        ".about-header-item",
         { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5 }
+        { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 }
       )
         .fromTo(
-          ".about-heading-line",
+          ".about-heading",
           { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.9, stagger: 0.15 },
+          { y: 0, opacity: 1, duration: 0.9 },
           "-=0.2"
         )
         .fromTo(
-          ".about-content-p",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8, stagger: 0.15 },
+          ".about-feature-box",
+          { y: 25, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 },
           "-=0.4"
         )
         .fromTo(
-          ".about-card",
+          ".about-prose",
           { y: 25, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 },
+          { y: 0, opacity: 1, duration: 0.7, stagger: 0.15 },
           "-=0.5"
         );
     }, sectionRef);
@@ -54,84 +51,84 @@ export const About: React.FC = () => {
     <section
       ref={sectionRef}
       id="about"
-      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#272B26]"
+      className="py-28 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-[#D8D5CE] dark:border-[#212621]"
     >
+      {/* Top Header Bar */}
+      <div className="about-header-item flex items-center justify-between pb-6 mb-12 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-xs uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-[#005A36] dark:text-[#00A865] font-semibold">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
+          <span>01 // ABOUT</span>
+        </div>
+        <div className="text-[#5F5F5A] dark:text-[#9E9E98]">
+          BACKGROUND & PHILOSOPHY
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-        {/* Left Column: Label & Heading */}
-        <div className="lg:col-span-6">
-          <SectionLabel label="01 — ABOUT" className="about-label mb-8" />
+        {/* Left Column: Heading and 3 Metrics */}
+        <div className="lg:col-span-6 flex flex-col justify-between">
+          <div>
+            <h2 className="about-heading font-serif text-4xl sm:text-5xl lg:text-5xl font-normal tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.14] mb-10">
+              <span className="block">I like building things</span>
+              <span className="block">and understanding</span>
+              <span className="block italic text-[#005A36] dark:text-[#00A865]">
+                how they truly work.
+              </span>
+            </h2>
+          </div>
 
-          <h2
-            ref={headingRef}
-            className="font-serif text-3xl sm:text-5xl lg:text-5xl font-medium tracking-tight text-[#111111] dark:text-[#F5F3EE] leading-[1.15]"
-          >
-            <span className="about-heading-line block">
-              I LIKE BUILDING THINGS
-            </span>
-            <span className="about-heading-line block text-[#005A36] dark:text-[#00A865]">
-              AND UNDERSTANDING
-            </span>
-            <span className="about-heading-line block">
-              HOW THEY WORK.
-            </span>
-          </h2>
-
-          {/* Core Focus Badges */}
-          <div className="mt-12 pt-8 border-t border-[#D8D5CE]/60 dark:border-[#272B26]/60 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
-              <Terminal size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
-                FULL-STACK
+          {/* 3 Horizontal Metric Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+              <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
+                01 — FULL-STACK
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
-                From DB queries to UI state
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
+                End-to-End System Development
               </div>
             </div>
 
-            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
-              <Layers size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
-                MOBILE APPS
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+              <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
+                02 — MOBILE
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
-                Flutter cross-platform logic
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
+                Cross-platform with native performance
               </div>
             </div>
 
-            <div className="about-card p-4 border border-[#D8D5CE] dark:border-[#272B26] bg-[#FAF9F6] dark:bg-[#141714] transition-colors hover:border-[#005A36] dark:hover:border-[#00A865]">
-              <Cpu size={18} className="text-[#005A36] dark:text-[#00A865] mb-3" />
-              <div className="font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] font-semibold">
-                AI SYSTEMS
+            <div className="about-feature-box p-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411]">
+              <div className="font-mono text-xs font-semibold text-[#005A36] dark:text-[#00A865] mb-2">
+                03 — SYSTEMS
               </div>
-              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] mt-1">
-                Conversational & voice workflows
+              <div className="font-sans text-xs text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
+                Scalable architectures & API design
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Bio Prose & Principles */}
-        <div className="lg:col-span-6 flex flex-col justify-center space-y-6 lg:pl-6">
-          <p className="about-content-p font-sans text-lg sm:text-xl text-[#111111] dark:text-[#F5F3EE] font-normal leading-relaxed">
-            I'm Sayan Biswas, a developer focused primarily on Flutter and full-stack development.
+        {/* Right Column: Bio Prose & Engineering Principle Quote */}
+        <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
+          <p className="about-prose font-sans text-base sm:text-lg text-[#111111] dark:text-[#F5F3EE] leading-relaxed">
+            I'm Sayan Biswas, a software developer focused on Flutter and full-stack systems and clean architecture. Passionate about building modern, intuitive apps that solve real-world problems. Transitioning complex ideas into working products, with practical logic, clean code, and user-centric execution.
           </p>
 
-          <p className="about-content-p font-sans text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
-            I enjoy building products from the interface all the way to the backend, experimenting with new technologies, and learning by actually creating things.
+          <p className="about-prose font-sans text-sm sm:text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
+            I approach code with an engineer's mindset: build the smallest functional kernel, measure its real-world behavior, and refine through continuous iterations. Always learning, experimenting with emerging tech ecosystems, and learning by actually creating.
           </p>
 
-          <p className="about-content-p font-sans text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
-            My current interests include mobile development, backend systems, APIs, AI-powered applications, and developer tooling.
-          </p>
-
-          {/* Technical Spec Quote Box */}
-          <div className="about-content-p mt-6 p-6 border-l-2 border-[#005A36] dark:border-[#00A865] bg-[#E9E4D9]/30 dark:bg-[#1A201A]/50">
-            <div className="font-mono text-xs text-[#005A36] dark:text-[#00A865] tracking-wider uppercase mb-1">
-              PHILOSOPHY // ENGINEERING PRINCIPLE
+          {/* Principle Box */}
+          <div className="about-prose p-6 border-l-2 border-[#005A36] dark:border-[#00A865] bg-[#FFFFFF] dark:bg-[#111411] border border-t-[#D8D5CE] border-r-[#D8D5CE] border-b-[#D8D5CE] dark:border-t-[#212621] dark:border-r-[#212621] dark:border-b-[#212621]">
+            <div className="font-mono text-[10px] text-[#005A36] dark:text-[#00A865] uppercase tracking-wider font-semibold mb-2">
+              ENGINEERING PRINCIPLE
             </div>
-            <p className="font-serif italic text-base text-[#111111] dark:text-[#F5F3EE]">
+            <p className="font-serif italic text-base text-[#111111] dark:text-[#F5F3EE] leading-relaxed mb-3">
               "Clarity over complexity. Build the smallest functional kernel, measure its real-world behavior, and refine through continuous iterations."
             </p>
+            <div className="font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+              — CORE WORKING PHILOSOPHY
+            </div>
           </div>
         </div>
       </div>
