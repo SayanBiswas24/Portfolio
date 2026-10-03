@@ -131,8 +131,8 @@ const NetworkScene: React.FC<NetworkSceneProps> = ({
                 ? "#34B37D"
                 : "#424D42"
               : idx % 2 === 0
-              ? "#2F7D5B"
-              : "#111111"
+                ? "#2F7D5B"
+                : "#111111"
           }
           size={0.22}
         />

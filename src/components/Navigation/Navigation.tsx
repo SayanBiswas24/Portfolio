@@ -84,7 +84,7 @@ export const Navigation: React.FC = () => {
 
         {/* Center Desktop Nav Links */}
         <nav
-          className="hidden lg:flex items-center space-x-1"
+          className="hidden lg:flex items-center gap-2.5 xl:gap-3.5"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => {
