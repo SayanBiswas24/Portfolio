@@ -191,17 +191,13 @@ export const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Link */}
+              {/* Technical Status */}
               <div className="mt-8 pt-5 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1.5 text-[#005A36] dark:text-[#00A865] hover:underline uppercase tracking-wider font-semibold group"
-                >
-                  <span>EXPLORE PROJECT</span>
-                  <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                <span className="text-[#005A36] dark:text-[#00A865] font-semibold tracking-wider uppercase">
+                  STATUS: VERIFIED ARCHIVE
+                </span>
                 <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[11px]">
-                  VERIFIED ARCHIVE
+                  DEPLOYMENT // PRODUCTION
                 </span>
               </div>
             </div>
@@ -340,18 +336,14 @@ export const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Action Link */}
+              {/* Technical Status */}
               <div className="mt-8 pt-5 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-xs">
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold tracking-wider uppercase">
                   STATUS: PRODUCTION
                 </span>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] uppercase tracking-wider font-semibold group"
-                >
-                  <span>CASE STUDY</span>
-                  <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[11px]">
+                  PIPELINE // REALTIME SPEECH
+                </span>
               </div>
             </div>
           </div>
@@ -408,13 +400,9 @@ export const Projects: React.FC = () => {
               <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[10px]">
                 RELEASE // 2026
               </span>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 text-[#005A36] dark:text-[#00A865] hover:underline uppercase tracking-wider font-semibold"
-              >
-                <span>VIEW PROJECT</span>
-                <ArrowUpRight size={12} />
-              </a>
+              <span className="text-[#005A36] dark:text-[#00A865] font-semibold text-[10px] uppercase tracking-wider">
+                STATUS: CIVIC PILOT
+              </span>
             </div>
           </article>
 
@@ -508,13 +496,9 @@ export const Projects: React.FC = () => {
               <span className="text-[#5F5F5A] dark:text-[#9E9E98] text-[10px]">
                 FRAMEWORK // FLUTTER GAME ENGINE
               </span>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 text-[#005A36] dark:text-[#00A865] hover:underline uppercase tracking-wider font-semibold"
-              >
-                <span>ONLINE DEMO</span>
-                <ArrowUpRight size={12} />
-              </a>
+              <span className="text-[#005A36] dark:text-[#00A865] font-semibold text-[10px] uppercase tracking-wider">
+                STATUS: OPEN ARCHIVE
+              </span>
             </div>
           </article>
         </div>

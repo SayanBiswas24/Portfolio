@@ -132,9 +132,9 @@ export const Contact: React.FC = () => {
                   href={personalInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200"
+                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200 break-all"
                 >
-                  {personalInfo.github}
+                  {personalInfo.github.replace(/^https?:\/\//, "")}
                 </a>
               </div>
 
@@ -147,9 +147,9 @@ export const Contact: React.FC = () => {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200"
+                  className="inline-flex items-center font-mono text-sm text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-2 py-1 -ml-2 rounded-md hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/12 transition-all duration-200 break-all"
                 >
-                  {personalInfo.linkedin}
+                  {personalInfo.linkedin.replace(/^https?:\/\//, "")}
                 </a>
               </div>
             </div>

@@ -14,9 +14,9 @@ export const personalInfo: PersonalInfo = {
   role: "Flutter / Full-Stack Developer",
   shortBio:
     "I build useful software, explore new technologies, and turn ideas into working products.",
-  email: "YOUR_EMAIL_HERE",
-  github: "YOUR_GITHUB_URL_HERE",
-  linkedin: "YOUR_LINKEDIN_URL_HERE",
+  email: "sayan24982@gmail.com",
+  github: "https://github.com/SayanBiswas24",
+  linkedin: "https://www.linkedin.com/in/sayan-biswas-2b8313327",
   status: "Available for interesting engineering opportunities",
   location: "India",
 };

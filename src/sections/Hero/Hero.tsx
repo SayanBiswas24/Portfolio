@@ -145,6 +145,17 @@ export const Hero: React.FC = () => {
             >
               GITHUB
             </Button>
+
+            <Button
+              variant="secondary"
+              href={personalInfo.linkedin}
+              target="_blank"
+              showArrow={true}
+              arrowDirection="up-right"
+              id="hero-linkedin-btn"
+            >
+              LINKEDIN
+            </Button>
           </div>
         </div>
 
