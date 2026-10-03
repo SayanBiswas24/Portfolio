@@ -1,3 +1,10 @@
+export interface ProjectScreenshot {
+  id: string;
+  label: string;
+  tag: string;
+  image: string;
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -6,6 +13,7 @@ export interface Project {
   description: string;
   technologies: string[];
   image: string;
+  screenshots?: ProjectScreenshot[];
   github: string;
   live: string;
   featured?: boolean;
@@ -26,7 +34,33 @@ export const projects: Project[] = [
       "Bhashini",
       "Backend Systems",
     ],
-    image: "/images/projects/kaushal-saathi.webp",
+    image: "/images/projects/kaushal-saathi/home.jpg",
+    screenshots: [
+      {
+        id: "onboarding",
+        label: "Voice AI Onboarding",
+        tag: "01 // ONBOARDING",
+        image: "/images/projects/kaushal-saathi/onboarding.jpg",
+      },
+      {
+        id: "language",
+        label: "Multilingual Dialects",
+        tag: "02 // LANGUAGE",
+        image: "/images/projects/kaushal-saathi/language.jpg",
+      },
+      {
+        id: "home",
+        label: "Conversational Dashboard",
+        tag: "03 // DASHBOARD",
+        image: "/images/projects/kaushal-saathi/home.jpg",
+      },
+      {
+        id: "settings",
+        label: "Voice & Speech Preferences",
+        tag: "04 // SETTINGS",
+        image: "/images/projects/kaushal-saathi/settings.jpg",
+      },
+    ],
     github: "",
     live: "",
     featured: true,
