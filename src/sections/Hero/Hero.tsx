@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
         {/* Left Column: Typography */}
         <div ref={contentRef} className="lg:col-span-7 flex flex-col z-10">
           {/* Metadata pill badge */}
-          <div className="hero-meta inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mb-5">
+          <div className="hero-meta inline-flex items-center gap-2 font-mono text-[14px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mb-5">
             <span className="w-1.5 h-1.5 bg-[#005A36] dark:bg-[#00A865] rounded-xs" />
             <span className="font-semibold">
               PERSONAL PORTFOLIO
@@ -160,7 +160,7 @@ export const Hero: React.FC = () => {
           ref={visualRef}
           className="lg:col-span-5 relative w-full border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#0E120E] shadow-xs flex flex-col justify-between overflow-hidden"
         >
-          <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[13px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none bg-[#FAF9F6] dark:bg-[#121612]">
             <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
               INTERACTIVE SYSTEM GRAPH
@@ -173,7 +173,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-[#D8D5CE] dark:border-[#212621] font-mono text-[13px] sm:text-[14px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider select-none">
         <div className="text-left">
           AVAILABLE FOR NEW ROLES
         </div>

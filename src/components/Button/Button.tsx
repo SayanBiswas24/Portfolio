@@ -27,7 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   id,
 }) => {
   const baseStyles =
-    "group inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider transition-all duration-200 select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] focus-visible:outline-offset-2 rounded-full active:scale-[0.98]";
+    "group inline-flex items-center justify-center font-mono text-sm uppercase tracking-wider transition-all duration-200 select-none cursor-pointer focus-visible:outline-2 focus-visible:outline-[#005A36] dark:focus-visible:outline-[#00A865] focus-visible:outline-offset-2 rounded-full active:scale-[0.98]";
 
   const variantStyles = {
     primary:

@@ -54,7 +54,7 @@ export const Credentials: React.FC = () => {
     >
       <div className="credentials-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
+          <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
             <span>05 // CREDENTIALS</span>
           </div>
@@ -81,10 +81,10 @@ export const Credentials: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/50 dark:border-[#212621]/50 mb-5">
-                  <span className="px-2.5 py-0.5 rounded-full font-mono text-[10px] uppercase tracking-wider bg-[#005A36]/10 dark:bg-[#00A865]/15 text-[#005A36] dark:text-[#00A865] border border-[#005A36]/30 dark:border-[#00A865]/30 font-semibold">
+                  <span className="px-2.5 py-0.5 rounded-full font-mono text-[12px] sm:text-[13px] uppercase tracking-wider bg-[#005A36]/10 dark:bg-[#00A865]/15 text-[#005A36] dark:text-[#00A865] border border-[#005A36]/30 dark:border-[#00A865]/30 font-semibold">
                     {badgeLabel}
                   </span>
-                  <span className="font-mono text-xs text-[#5F5F5A] dark:text-[#9E9E98]">
+                  <span className="font-mono text-sm text-[#5F5F5A] dark:text-[#9E9E98]">
                     {item.year}
                   </span>
                 </div>
@@ -93,12 +93,12 @@ export const Credentials: React.FC = () => {
                   {item.title}
                 </h3>
 
-                <p className="font-mono text-xs uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mt-2.5">
+                <p className="font-mono text-sm uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] mt-2.5">
                   {item.organization}
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
+              <div className="mt-8 pt-4 border-t border-[#D8D5CE]/50 dark:border-[#212621]/60 flex items-center justify-between font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98]">
                 <span className="text-[#005A36] dark:text-[#00A865]">
                   STATUS: VERIFIED
                 </span>

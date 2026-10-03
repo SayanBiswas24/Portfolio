@@ -193,7 +193,7 @@ export const HeroNetwork: React.FC<HeroNetworkProps> = ({ mouse }) => {
       </Canvas>
 
       {/* Subtle bottom technical caption */}
-      <div className="absolute bottom-2 right-2 font-mono text-[9px] text-[#5F5F5A] dark:text-[#9E9E98]/70 uppercase tracking-widest pointer-events-none hidden sm:block">
+      <div className="absolute bottom-2 right-2 font-mono text-[11px] text-[#5F5F5A] dark:text-[#9E9E98]/70 uppercase tracking-widest pointer-events-none hidden sm:block">
         SYS.GEOM // 09 NODES ACTIVE
       </div>
     </div>

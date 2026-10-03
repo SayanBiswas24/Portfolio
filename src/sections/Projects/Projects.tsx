@@ -137,7 +137,7 @@ export const Projects: React.FC = () => {
     >
       <div className="projects-header-block mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
+          <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
             <span>03 // SELECTED WORK</span>
           </div>
@@ -154,7 +154,7 @@ export const Projects: React.FC = () => {
             {/* Left Content */}
             <div className="lg:col-span-6 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 01</span>
                 </div>
 
@@ -162,7 +162,7 @@ export const Projects: React.FC = () => {
                   <h3 className="font-serif text-3xl sm:text-4xl text-[#111111] dark:text-[#F5F3EE] font-normal tracking-tight">
                     {p1.title}
                   </h3>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1.5 font-medium">
+                  <div className="font-mono text-[13px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1.5 font-medium">
                     {p1.tagline}
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export const Projects: React.FC = () => {
                   {p1.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 font-mono text-[11px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
+                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
                     >
                       {t}
                     </span>
@@ -185,7 +185,7 @@ export const Projects: React.FC = () => {
             </div>
 
             <div className="lg:col-span-6 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs transition-colors">
-              <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
+              <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
                 <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                   <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                   <span>FLUTTER MULTILINGUAL CLIENT</span>
@@ -236,7 +236,7 @@ export const Projects: React.FC = () => {
 
                       {/* Screen Caption */}
                       <div className="mt-2 text-center">
-                        <div className="font-mono text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold">
+                        <div className="font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold">
                           {ss.tag.split("//")[0].trim()}
                         </div>
                         <div className="font-sans text-[10px] text-[#111111] dark:text-[#F5F3EE] truncate font-medium">
@@ -254,7 +254,7 @@ export const Projects: React.FC = () => {
         <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 lg:p-10 transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 lg:order-1 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] flex flex-col justify-between overflow-hidden shadow-xs">
-              <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
+              <div className="flex items-center justify-between px-4 py-2 border-b border-[#D8D5CE] dark:border-[#212621] font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider bg-[#FFFFFF] dark:bg-[#121612]">
                 <span>VOICE & CALL INTELLIGENCE</span>
               </div>
 
@@ -269,7 +269,7 @@ export const Projects: React.FC = () => {
 
             <div className="lg:col-span-6 lg:order-2 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                   <span>PROJECT // 02</span>
                 </div>
 
@@ -277,7 +277,7 @@ export const Projects: React.FC = () => {
                   <h3 className="font-serif text-3xl sm:text-4xl text-[#111111] dark:text-[#F5F3EE] font-normal tracking-tight">
                     {p2.title}
                   </h3>
-                  <div className="font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1.5 font-medium">
+                  <div className="font-mono text-[13px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1.5 font-medium">
                     {p2.tagline}
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export const Projects: React.FC = () => {
                   {p2.technologies.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 font-mono text-[11px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
+                      className="px-2.5 py-1 font-mono text-[13px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE] rounded-xs"
                     >
                       {t}
                     </span>
@@ -306,7 +306,7 @@ export const Projects: React.FC = () => {
           {/* Project 03: Nagar Alert Hub */}
           <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 03</span>
               </div>
 
@@ -314,7 +314,7 @@ export const Projects: React.FC = () => {
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#111111] dark:text-[#F5F3EE] font-normal tracking-tight">
                   {p3.title}
                 </h3>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1">
+                <div className="font-mono text-[12px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1">
                   {p3.tagline}
                 </div>
               </div>
@@ -324,7 +324,7 @@ export const Projects: React.FC = () => {
               </p>
 
               <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
-                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                     <span>CIVIC CLIENT</span>
@@ -367,7 +367,7 @@ export const Projects: React.FC = () => {
                       </div>
 
                       <div className="mt-1.5 text-center">
-                        <div className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold truncate">
+                        <div className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold truncate">
                           {ss.tag.split("//")[0].trim()}
                         </div>
                         <div className="font-sans text-[9px] sm:text-[10px] text-[#111111] dark:text-[#F5F3EE] truncate font-medium">
@@ -383,7 +383,7 @@ export const Projects: React.FC = () => {
                 {p3.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 font-mono text-[10px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
+                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
                   >
                     {t}
                   </span>
@@ -394,7 +394,7 @@ export const Projects: React.FC = () => {
 
           <article className="project-editorial-row border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-6 sm:p-8 flex flex-col justify-between transition-colors duration-300 hover:border-[#005A36] dark:hover:border-[#00A865]">
             <div>
-              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[11px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
+              <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 font-mono text-[14px] text-[#005A36] dark:text-[#00A865] font-semibold uppercase tracking-wider">
                 <span>PROJECT // 04</span>
               </div>
 
@@ -402,7 +402,7 @@ export const Projects: React.FC = () => {
                 <h3 className="font-serif text-2xl sm:text-3xl text-[#111111] dark:text-[#F5F3EE] font-normal tracking-tight">
                   {p4.title}
                 </h3>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1">
+                <div className="font-mono text-[12px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] mt-1">
                   {p4.tagline}
                 </div>
               </div>
@@ -412,7 +412,7 @@ export const Projects: React.FC = () => {
               </p>
 
               <div className="my-4 border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#0E120E] p-2.5 sm:p-3 overflow-hidden">
-                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+                <div className="flex items-center justify-between pb-2 mb-2.5 border-b border-[#D8D5CE]/50 dark:border-[#212621]/60 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
                   <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                     <Gamepad2 size={12} className="text-[#005A36] dark:text-[#00A865]" />
                     <span>2D GAME ENGINE</span>
@@ -433,7 +433,7 @@ export const Projects: React.FC = () => {
                       tabIndex={0}
                       aria-label={`Inspect ${ss.label} scene`}
                     >
-                      <div className="flex items-center justify-between px-2.5 py-1 bg-[#171B17] border-b border-[#2A332A] font-mono text-[9px] select-none">
+                      <div className="flex items-center justify-between px-2.5 py-1 bg-[#171B17] border-b border-[#2A332A] font-mono text-[11px] select-none">
                         <span className="text-[#00A865] font-semibold">{ss.tag.split("//")[0].trim()}</span>
                         <span className="text-[#F5F3EE] truncate ml-1 text-[10px] font-sans">{ss.label}</span>
                       </div>
@@ -461,7 +461,7 @@ export const Projects: React.FC = () => {
                 {p4.technologies.map((t) => (
                   <span
                     key={t}
-                    className="px-2 py-0.5 font-mono text-[10px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
+                    className="px-2 py-0.5 font-mono text-[12px] border border-[#D8D5CE] dark:border-[#212621] bg-[#FAF9F6] dark:bg-[#161A16] text-[#111111] dark:text-[#F5F3EE]"
                   >
                     {t}
                   </span>
@@ -485,7 +485,7 @@ export const Projects: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-xs">
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
                   {activeModalProject.screenshots[activeModalProject.index].tag}
@@ -540,7 +540,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Bottom Screen Switcher Dots / Pills */}
-            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
+            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
               <span>VIEW {activeModalProject.index + 1} OF {activeModalProject.screenshots.length}</span>
               <div className="flex items-center gap-1.5">
                 {activeModalProject.screenshots.map((s, sIdx) => (

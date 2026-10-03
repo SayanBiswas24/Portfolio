@@ -125,10 +125,10 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           <div>
             {/* Project Index & Category */}
             <div className="flex items-center justify-between pb-4 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60">
-              <span className="font-mono text-sm tracking-widest text-[#005A36] dark:text-[#00A865] font-medium">
+              <span className="font-mono text-base tracking-widest text-[#005A36] dark:text-[#00A865] font-medium">
                 PROJECT // {project.number}
               </span>
-              <span className="font-mono text-xs tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] uppercase">
+              <span className="font-mono text-sm tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] uppercase">
                 {project.technologies[0]} SYSTEM
               </span>
             </div>
@@ -150,14 +150,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
             {/* Tech Tags */}
             <div className="mt-8">
-              <div className="text-[11px] font-mono tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] uppercase mb-3">
+              <div className="text-[13px] font-mono tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] uppercase mb-3">
                 Stack & Technologies
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="font-mono text-xs px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#1A201A] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#272B26] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
+                    className="font-mono text-sm px-2.5 py-1 bg-[#E9E4D9]/60 dark:bg-[#1A201A] text-[#111111] dark:text-[#F5F3EE] border border-[#D8D5CE] dark:border-[#272B26] hover:border-[#005A36] dark:hover:border-[#00A865] hover:text-[#005A36] dark:hover:text-[#00A865] transition-colors"
                   >
                     {tech}
                   </span>
@@ -173,13 +173,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] hover:text-[#007A4A] dark:hover:text-[#1DE48F] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/15 hover:shadow-[0_0_12px_rgba(0,90,54,0.15)] dark:hover:shadow-[0_0_14px_rgba(0,168,101,0.25)] transition-all duration-200"
+                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] hover:text-[#007A4A] dark:hover:text-[#1DE48F] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/10 dark:hover:bg-[#00A865]/15 hover:shadow-[0_0_12px_rgba(0,90,54,0.15)] dark:hover:shadow-[0_0_14px_rgba(0,168,101,0.25)] transition-all duration-200"
               >
                 <span>Live Experience</span>
                 <ExternalLink size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ) : (
-              <span className="font-mono text-xs tracking-wider text-[#5F5F5A]/70 dark:text-[#9E9E98]/70 uppercase px-2 py-1">
+              <span className="font-mono text-sm tracking-wider text-[#5F5F5A]/70 dark:text-[#9E9E98]/70 uppercase px-2 py-1">
                 System In Deployment
               </span>
             )}
@@ -189,7 +189,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 transition-all duration-200"
+                className="group inline-flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] px-3.5 py-1.5 rounded-full hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 transition-all duration-200"
               >
                 <GithubIcon size={13} />
                 <span>Source</span>
@@ -232,7 +232,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 /* Dual-Scene 2D Game Showcase */
                 <div className="relative overflow-hidden bg-[#FAF9F6] dark:bg-[#101410] border border-[#D8D5CE]/60 dark:border-[#272B26]/60 p-3 sm:p-4">
                   {/* Top CAD Studio Bar */}
-                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
+                  <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                       <Gamepad2 size={13} className="text-[#005A36] dark:text-[#00A865]" />
                       <span>2D GAME ENGINE // 2 LEVEL SCENES</span>
@@ -255,7 +255,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                         aria-label={`View ${ss.label} scene`}
                       >
                         {/* Scene Title Bar */}
-                        <div className="flex items-center justify-between px-3 py-1.5 bg-[#171B17] border-b border-[#2A332A] font-mono text-[10px] select-none">
+                        <div className="flex items-center justify-between px-3 py-1.5 bg-[#171B17] border-b border-[#2A332A] font-mono text-[12px] select-none">
                           <span className="text-[#00A865] font-semibold tracking-wider">
                             {ss.tag.split("//")[0].trim()}
                           </span>
@@ -288,7 +288,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 /* Multi-Device Smartphone Gallery Showcase (4 screens) */
                 <div className="relative overflow-hidden bg-[#E9E4D9]/20 dark:bg-[#121612]/60 border border-[#D8D5CE]/60 dark:border-[#272B26]/60 p-3 sm:p-5">
                   {/* Top CAD Studio Bar */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[10px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#D8D5CE]/50 dark:border-[#272B26]/60 font-mono text-[12px] uppercase tracking-wider text-[#5F5F5A] dark:text-[#9E9E98] select-none">
                     <span className="flex items-center gap-1.5 text-[#111111] dark:text-[#F5F3EE] font-medium">
                       <Smartphone size={12} className="text-[#005A36] dark:text-[#00A865]" />
                       <span>FLUTTER MOBILE CLIENT // 4 VIEWS</span>
@@ -338,7 +338,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
 
                         {/* Screen Caption */}
                         <div className="mt-2 text-center">
-                          <div className="font-mono text-[9px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold">
+                          <div className="font-mono text-[11px] uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold">
                             {ss.tag.split("//")[0].trim()}
                           </div>
                           <div className="font-sans text-[11px] text-[#111111] dark:text-[#F5F3EE] truncate font-medium">
@@ -384,7 +384,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                     isHovered ? "opacity-100" : "opacity-0"
                   }`}
                 >
-                  <div className="bg-[#F5F3EE] dark:bg-[#0E100E] px-4 py-2 border border-[#005A36] dark:border-[#00A865] text-[#005A36] dark:text-[#00A865] font-mono text-xs uppercase tracking-widest flex items-center gap-2 shadow-xs">
+                  <div className="bg-[#F5F3EE] dark:bg-[#0E100E] px-4 py-2 border border-[#005A36] dark:border-[#00A865] text-[#005A36] dark:text-[#00A865] font-mono text-sm uppercase tracking-widest flex items-center gap-2 shadow-xs">
                     <span>EXPAND VIEW</span>
                     <ArrowUpRight size={13} />
                   </div>
@@ -393,7 +393,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             )}
 
             {/* Bottom Technical Bar */}
-            <div className="mt-3 flex items-center justify-between px-1 font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
+            <div className="mt-3 flex items-center justify-between px-1 font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98] uppercase tracking-wider">
               <span>FIG. {project.number} — {project.screenshots ? (project.screenshots.length === 2 ? "2D GAME ENGINE" : "MOBILE UI CLIENT") : "SYSTEM ARCHITECTURE"}</span>
               <span className="text-[#005A36] dark:text-[#00A865]">STATUS: VERIFIED</span>
             </div>
@@ -414,7 +414,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-xs">
+            <div className="w-full flex items-center justify-between pb-3 mb-2 border-b border-[#D8D5CE]/60 dark:border-[#272B26]/60 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#005A36] dark:text-[#00A865] font-semibold">
                   {project.screenshots[activeModalIndex].tag}
@@ -469,7 +469,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             </div>
 
             {/* Bottom Screen Switcher Dots / Pills */}
-            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
+            <div className="w-full pt-3 mt-2 border-t border-[#D8D5CE]/50 dark:border-[#272B26]/50 flex items-center justify-between font-mono text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
               <span>SCENE {activeModalIndex + 1} OF {project.screenshots.length}</span>
               <div className="flex items-center gap-1.5">
                 {project.screenshots.map((s, sIdx) => (

@@ -99,7 +99,7 @@ export const Skills: React.FC = () => {
     >
       <div className="skills-header-block mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#D8D5CE] dark:border-[#212621]">
         <div>
-          <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
+          <div className="flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-[#005A36] dark:text-[#00A865] font-semibold mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#005A36] dark:bg-[#00A865]" />
             <span>02 // SKILLS</span>
           </div>
@@ -117,7 +117,7 @@ export const Skills: React.FC = () => {
           >
             <div>
               <div className="flex items-center justify-between pb-3 border-b border-[#D8D5CE]/60 dark:border-[#212621]/60 mb-5">
-                <span className="font-mono text-xs text-[#005A36] dark:text-[#00A865] uppercase tracking-widest font-semibold">
+                <span className="font-mono text-sm text-[#005A36] dark:text-[#00A865] uppercase tracking-widest font-semibold">
                   {group.number} // {group.category}
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D8D5CE] dark:bg-[#212621] group-hover:bg-[#005A36] dark:group-hover:bg-[#00A865] transition-colors" />

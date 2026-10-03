@@ -77,7 +77,7 @@ export const Navigation: React.FC = () => {
           aria-label="Sayan Biswas Home"
         >
           <span className="w-2 h-2 rounded-full bg-[#005A36] dark:bg-[#00A865] animate-pulse group-hover:scale-125 transition-transform" />
-          <span className="font-mono text-xs tracking-widest font-semibold uppercase text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors duration-200">
+          <span className="font-mono text-sm tracking-widest font-semibold uppercase text-[#111111] dark:text-[#F5F3EE] group-hover:text-[#005A36] dark:group-hover:text-[#00A865] transition-colors duration-200">
             {personalInfo.name.toUpperCase()}
           </span>
         </a>
@@ -94,13 +94,13 @@ export const Navigation: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`font-mono text-[11px] tracking-wider transition-all duration-200 px-3 py-1.5 rounded-full flex items-center gap-1.5 select-none ${
+                className={`font-mono text-[13px] tracking-wider transition-all duration-200 px-3.5 py-1.5 rounded-full flex items-center gap-1.5 select-none ${
                   isActive
                     ? "text-[#005A36] dark:text-[#00A865] bg-[#005A36]/10 dark:bg-[#00A865]/15 font-semibold"
                     : "text-[#5F5F5A] dark:text-[#9E9E98] hover:text-[#111111] dark:hover:text-[#F5F3EE] hover:bg-[#005A36]/8 dark:hover:bg-[#00A865]/15 hover:shadow-[0_0_12px_rgba(0,90,54,0.1)] dark:hover:shadow-[0_0_12px_rgba(0,168,101,0.15)]"
                 }`}
               >
-                <span className={`text-[10px] ${isActive ? "text-[#005A36] dark:text-[#00A865]" : "opacity-60"}`}>
+                <span className={`text-[12px] ${isActive ? "text-[#005A36] dark:text-[#00A865]" : "opacity-60"}`}>
                   {item.number}.
                 </span>
                 <span>{item.label}</span>
@@ -147,7 +147,7 @@ export const Navigation: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="font-mono text-xs tracking-wider py-2 border-b border-[#D8D5CE]/40 dark:border-[#212621]/60 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
+                className="font-mono text-sm tracking-wider py-2 border-b border-[#D8D5CE]/40 dark:border-[#212621]/60 text-[#111111] dark:text-[#F5F3EE] hover:text-[#005A36] dark:hover:text-[#00A865] flex items-center justify-between"
               >
                 <span>
                   <span className="text-[#005A36] dark:text-[#00A865] mr-2">
@@ -155,7 +155,7 @@ export const Navigation: React.FC = () => {
                   </span>
                   {item.label}
                 </span>
-                <span className="text-[10px] text-[#5F5F5A] dark:text-[#9E9E98]">
+                <span className="text-[12px] text-[#5F5F5A] dark:text-[#9E9E98]">
                   ↗
                 </span>
               </a>

@@ -46,7 +46,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({
       </div>
 
       {showLabel && (
-        <span className="font-mono text-[10px] uppercase tracking-wider font-medium">
+        <span className="font-mono text-[12px] uppercase tracking-wider font-medium">
           {isDark ? "DARK" : "LIGHT"}
         </span>
       )}
