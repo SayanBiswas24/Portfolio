@@ -116,7 +116,21 @@ export const projects: Project[] = [
       "Game Development",
       "Animation",
     ],
-    image: "/images/projects/kings-and-pigs.webp",
+    image: "/images/projects/kings-and-pigs/level-1.png",
+    screenshots: [
+      {
+        id: "level-1",
+        label: "Castle Corridor Level",
+        tag: "01 // DUNGEON LEVEL 1",
+        image: "/images/projects/kings-and-pigs/level-1.png",
+      },
+      {
+        id: "level-2",
+        label: "Multi-Tier Platform Chamber",
+        tag: "02 // PLATFORM LEVEL 2",
+        image: "/images/projects/kings-and-pigs/level-2.png",
+      },
+    ],
     github: "",
     live: "",
     featured: false,
