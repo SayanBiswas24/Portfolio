@@ -36,6 +36,12 @@ const toolCategories: ToolCategory[] = [
   },
   {
     number: "05",
+    category: "BLOCKCHAIN",
+    items: ["Ethereum", "Solidity", "Algorand", "Algo"],
+    footer: "SMART CONTRACTS & WEB3",
+  },
+  {
+    number: "06",
     category: "TOOLS",
     items: ["Git / GitHub", "Docker", "Linux", "VS Code"],
     footer: "ENVIRONMENT & TOOLING",
@@ -107,12 +113,12 @@ export const Skills: React.FC = () => {
         </p>
       </div>
 
-      {/* 5 Column Cards Grid matching screenshot */}
-      <div className="tools-columns-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {/* 6 Column Cards Grid */}
+      <div className="tools-columns-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
         {toolCategories.map((group) => (
           <div
             key={group.category}
-            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
+            className="tool-column-card border border-[#D8D5CE] dark:border-[#212621] bg-[#FFFFFF] dark:bg-[#111411] p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:border-[#005A36] dark:hover:border-[#00A865] hover:bg-[#FAF9F5] dark:hover:bg-[#161B16] hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_0_20px_rgba(0,168,101,0.08)] group"
           >
             <div>
               {/* Card Header */}

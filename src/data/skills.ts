@@ -54,8 +54,19 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    category: "Blockchain",
+    code: "05/BCN",
+    description: "Decentralized state machines, smart contracts & distributed ledgers",
+    skills: [
+      { name: "Ethereum", focus: "EVM & Ecosystem" },
+      { name: "Solidity", focus: "Smart Contracts" },
+      { name: "Algorand", focus: "Pure Proof-of-Stake" },
+      { name: "Algo", focus: "AVM & Native Assets" },
+    ],
+  },
+  {
     category: "Tools & Environment",
-    code: "05/ENV",
+    code: "06/ENV",
     description: "Developer tooling, virtualization, and Unix workflow",
     skills: [
       { name: "Git", focus: "VCS & GitOps" },

@@ -111,11 +111,11 @@ export const About: React.FC = () => {
         {/* Right Column: Bio Prose & Engineering Principle Quote */}
         <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
           <p className="about-prose font-sans text-base sm:text-lg text-[#111111] dark:text-[#F5F3EE] leading-relaxed">
-            I'm Sayan Biswas, a software developer focused on Flutter and full-stack systems and clean architecture. Passionate about building modern, intuitive apps that solve real-world problems. Transitioning complex ideas into working products, with practical logic, clean code, and user-centric execution.
+            I'm Sayan Biswas, a software developer focused on Flutter, full-stack systems, clean architecture, and decentralized applications. Passionate about building modern, intuitive products that solve real-world problems. Transitioning complex ideas into working software, with practical logic, clean code, and user-centric execution.
           </p>
 
           <p className="about-prose font-sans text-sm sm:text-base text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed">
-            I approach code with an engineer's mindset: build the smallest functional kernel, measure its real-world behavior, and refine through continuous iterations. Always learning, experimenting with emerging tech ecosystems, and learning by actually creating.
+            I approach code with an engineer's mindset: build the smallest functional kernel, measure its real-world behavior, and refine through continuous iterations. In addition to mobile and web platforms, I actively explore smart contracts and distributed ledger technologies across Ethereum and Algorand.
           </p>
 
           {/* Principle Box */}

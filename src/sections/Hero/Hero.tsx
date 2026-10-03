@@ -120,7 +120,7 @@ export const Hero: React.FC = () => {
 
           {/* Refined Description */}
           <p className="hero-description font-sans text-base sm:text-lg text-[#5F5F5A] dark:text-[#9E9E98] leading-relaxed max-w-xl mb-9">
-            Flutter and Full-Stack developer focused on building durable, scalable systems and intuitive digital products. Bringing analytical rigor and craftsmanship to every product build.
+            Flutter and Full-Stack developer focused on building durable, scalable systems, intuitive digital products, and decentralized architectures. Bringing analytical rigor and craftsmanship to every product build.
           </p>
 
           {/* Buttons: Pill styling matching screenshot */}
